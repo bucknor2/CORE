@@ -1,0 +1,194 @@
+# Analyses
+
+##Constructing Resilience Measure
+
+```{r eval=FALSE}
+HRSdataDir <- "C:/Users/Bri/Documents/grad-repo/grad-repo/SRP/"
+load(paste0(HRSdataDir, "SRP_DATASET_FINAL_2.RData"))
+library(dplyr)
+```
+
+Calculate age.**Note: this is the age they were at the time they did the questionaire**
+```{r eval=FALSE}
+SRP_DATASET_FINAL$AGE = paste0(SRP_DATASET_FINAL$YEAR - SRP_DATASET_FINAL$BIRTHYR)
+```
+
+lifetime trauma: 7 items (Q37a - Q37g) (Scale: 1= Yes, 5 = No)
+```{r eval=FALSE}
+LFT = SRP_DATASET_FINAL[c(3,5,6,343,263,265,267,269,271,273,275)]
+colnames(LFT)
+colMeans(is.na(LFT))
+```
+
+Endorsement Rate
+```{r eval=FALSE}
+participants = nrow(LFT)
+colSums(LFT==1,na.rm = TRUE)
+colSums(LFT==1,na.rm = TRUE)/(participants)>0.99
+#LFT <- select(LFT,-$) #if any of the items are "TRUE", use this line of code to reomve the item from the dataset
+```
+
+Stressful life events: 6 items (Q38-Q38f) (Scale: 1 = Yes, 5 = No)
+```{r eval=FALSE}
+SLE = SRP_DATASET_FINAL[c(3,284,286,288,290,292,294)]
+colnames(SLE)
+```
+Endorsement Rate
+```{r eval=FALSE}
+colSums(SLE==1,na.rm = TRUE)
+colSums(SLE==1,na.rm = TRUE)/(participants)>0.99
+#SLE <- select(SLE,-$) #if any of the items are "TRUE", use this line of code to reomve the item from the dataset
+```
+
+Ongoing chronic stressors: 8 items (Q40a_a - Q40a_h)(Scale: 1 = No, didn't happen, 2 = Yes, but not upsetting, 3 = Yes, somewhat upsetting, 4 = Yes, very upsetting)
+```{r eval=FALSE}
+OCS = SRP_DATASET_FINAL[c(3,305:312)]
+colnames(OCS)
+```
+
+Endorsement Rate
+```{r eval=FALSE}
+colSums(OCS==1,na.rm = TRUE)
+colSums(OCS==1,na.rm = TRUE)/(participants)>0.99
+#OCS <- select(OCS,-$) #if any of the items are "TRUE", use this line of code to reomve the item from the dataset
+```
+
+PANAS: 25 item (Q27a-Q27y)(Scale: 1 = Very much, 2 = Quite a bit, 3 = Moderately, 4 = A little, 5 = Not at all). Reverse coded as per documentation.
+```{r eval=FALSE}
+PANAS = SRP_DATASET_FINAL[c(3,139:163)]
+colnames(PANAS)
+PANAS_NA <- dplyr::select(PANAS,LB027A, LB027B, LB027E, LB027I, LB027J, LB027L, LB027M, LB027N,LB027O,LB027R, LB027S,LB027W)
+PANAS_PA <- dplyr::select(PANAS,HHID_PN.x,LB027C, LB027D, LB027F, LB027G, LB027H, LB027K, LB027P, LB027Q, LB027T,LB027U, LB027V, LB027X,LB027Y)
+PANAS_NA = 6 - PANAS_NA #reverse code
+PANAS <- bind_cols(PANAS_PA,PANAS_NA)
+```
+
+Endorsement Rate
+```{r eval=FALSE}
+colSums(PANAS==1,na.rm = TRUE)
+colSums(PANAS==1,na.rm = TRUE)/(participants)>0.99
+#PANAS <- select(PANAS,-$) #if any of the items are "TRUE", use this line of code to reomve the item from the dataset
+```
+
+Create dataset for all the phenos. Address missingness
+```{r eval=FALSE}
+Phenos <- left_join(LFT,SLE,by="HHID_PN.x")
+Phenos <- left_join(Phenos,OCS, by = "HHID_PN.x")
+Phenos <- left_join(Phenos,PANAS, by = "HHID_PN.x")
+Phenos$AGE <- as.numeric(as.character(Phenos$AGE))
+colMeans(is.na(Phenos))>0.05
+```
+
+Scoring PANAS.
+```{r eval=FALSE}
+Phenos$PANAS = rowMeans(PANAS[,c("LB027A", "LB027B", "LB027C", "LB027D", "LB027E", "LB027F", "LB027G", "LB027H", "LB027I","LB027J", "LB027K", "LB027L","LB027M","LB027N", "LB027O", "LB027P", "LB027Q", "LB027R", "LB027S", "LB027T", "LB027U", "LB027V","LB027W", "LB027X","LB027Y")],na.rm = TRUE)
+Phenos <- Phenos[-c(26:50)]
+names(Phenos)[names(Phenos) == 'HHID_PN.x'] <- 'HHID_PN'
+```
+
+```{r eval=FALSE}
+complete = na.omit(Phenos)
+resilience <- lm(PANAS~.-HHID_PN, data=complete)
+resilience_resid <- as.data.frame(rstandard(resilience))
+colnames(resilience_resid) <- c("resilience")
+resilience_resid = resilience_resid * -1
+res_data = bind_cols(complete,resilience_resid)
+res_data = dplyr::select(res_data,HHID_PN , resilience)
+```
+
+```{r eval=FALSE}
+PGS_data = inner_join(SRP_DATASET_PGS_A,res_data,by="HHID_PN")
+d_E = filter(PGS_data,group=="EA")
+d_AA = filter(PGS_data, group=="AA")
+```
+
+## Regressions: brought to you by for loops & lapply!
+```{r eval=FALSE}
+pgs = c("PGS3_HEIGHT_GIANT14","PGS3_WC_GIANT15","PGS3_AD_IGAP13", "PGS3_GENCOG_CHRG15", "PGS3_SCZ_PGC14","PGS3_EVRSMK_TAG10","PGS3_WELLB_SSGAC16","PGS3_NEURO_SSGAC16","PGS3_DPSYMP_SSGAC16","PGS3_CPD_TAG10","PGS3_CAD_CARDIOGR11","PGS3_MI_CARDIOGR15","PGS3_T2D_DIAGRAM12","PGS3_ADHD_PGC17","PGS3_AUTISM_PGC17","PGS3_BIP_PGC11","PGS3_XDISORDERPGC13","PGS3_MENARCHE_RPG14","PGS3_MENOPAUS_RPG15","PGS3_CRTSL_CORNET14","PGS3_EXTRAV_GPC17","PGS3_AB_BROAD17","PGS3_EDU3_SSGAC18","PGS3_OCD_IOCDF17","PGS3_AFBC_SOCGEN16", "PGS3_AFBF_SOCGEN16", "PGS3_AFBM_SOCGEN16","PGS3_MDD2_PGC18", "PGS3_PTSDAA_PGC18", "PGS3_PTSDEA_PGC18", "PGS3_PTSDC_PGC18","PGS3_ANXFS_ANGST16")
+```
+
+
+Use a for loop to start setting up the model to run the regression on. Here, each pgs of interest is being joined up with the columns needed for the model and grouped into a list. each item in the list is then named to match the pgs of interest. 
+```{r eval=FALSE}
+for (p in pgs){
+  assign(paste0(p, sep =""),subset(d_AA, select = c("resilience", "PC1_5A", "PC1_5B", "PC1_5C", "PC1_5D", "PC1_5E",p)))
+}
+pgs.list.AA = list(PGS3_HEIGHT_GIANT14=	PGS3_HEIGHT_GIANT14,
+PGS3_WC_GIANT15=	PGS3_WC_GIANT15,
+PGS3_AD_IGAP13=	PGS3_AD_IGAP13,
+PGS3_GENCOG_CHRG15 =	PGS3_GENCOG_CHRG15,
+PGS3_SCZ_PGC14 =	PGS3_SCZ_PGC14,
+PGS3_EVRSMK_TAG10=	PGS3_EVRSMK_TAG10,
+PGS3_WELLB_SSGAC16=	PGS3_WELLB_SSGAC16,
+PGS3_NEURO_SSGAC16=	PGS3_NEURO_SSGAC16,
+PGS3_DPSYMP_SSGAC16=	PGS3_DPSYMP_SSGAC16,
+PGS3_CPD_TAG10=	PGS3_CPD_TAG10,
+PGS3_CAD_CARDIOGR11=	PGS3_CAD_CARDIOGR11,
+PGS3_MI_CARDIOGR15=	PGS3_MI_CARDIOGR15,
+PGS3_T2D_DIAGRAM12=	PGS3_T2D_DIAGRAM12,
+PGS3_ADHD_PGC17=	PGS3_ADHD_PGC17,
+PGS3_AUTISM_PGC17=	PGS3_AUTISM_PGC17,
+PGS3_BIP_PGC11=	PGS3_BIP_PGC11,
+PGS3_XDISORDERPGC13=	PGS3_XDISORDERPGC13,
+PGS3_MENARCHE_RPG14=	PGS3_MENARCHE_RPG14,
+PGS3_MENOPAUS_RPG15=	PGS3_MENOPAUS_RPG15,
+PGS3_CRTSL_CORNET14=	PGS3_CRTSL_CORNET14,
+PGS3_EXTRAV_GPC17=	PGS3_EXTRAV_GPC17,
+PGS3_AB_BROAD17=	PGS3_AB_BROAD17,
+PGS3_EDU3_SSGAC18=	PGS3_EDU3_SSGAC18,
+PGS3_OCD_IOCDF17=	PGS3_OCD_IOCDF17,
+PGS3_AFBC_SOCGEN16=	PGS3_AFBC_SOCGEN16,
+PGS3_AFBF_SOCGEN16 =	PGS3_AFBF_SOCGEN16,
+PGS3_AFBM_SOCGEN16 =	PGS3_AFBM_SOCGEN16,
+PGS3_MDD2_PGC18=	PGS3_MDD2_PGC18,
+PGS3_PTSDAA_PGC18 =	PGS3_PTSDAA_PGC18,
+PGS3_PTSDEA_PGC18 =	PGS3_PTSDEA_PGC18,
+PGS3_PTSDC_PGC18 =	PGS3_PTSDC_PGC18,
+PGS3_ANXFS_ANGST16=	PGS3_ANXFS_ANGST16)
+```
+
+```{r eval=FALSE}
+for (p in pgs){
+  assign(paste0(p, sep =""),subset(d_E, select = c("resilience", "PC1_5A", "PC1_5B", "PC1_5C", "PC1_5D", "PC1_5E",p)))
+}
+pgs.list.E = list(PGS3_HEIGHT_GIANT14=	PGS3_HEIGHT_GIANT14,
+PGS3_WC_GIANT15=	PGS3_WC_GIANT15,
+PGS3_AD_IGAP13=	PGS3_AD_IGAP13,
+PGS3_GENCOG_CHRG15 =	PGS3_GENCOG_CHRG15,
+PGS3_SCZ_PGC14 =	PGS3_SCZ_PGC14,
+PGS3_EVRSMK_TAG10=	PGS3_EVRSMK_TAG10,
+PGS3_WELLB_SSGAC16=	PGS3_WELLB_SSGAC16,
+PGS3_NEURO_SSGAC16=	PGS3_NEURO_SSGAC16,
+PGS3_DPSYMP_SSGAC16=	PGS3_DPSYMP_SSGAC16,
+PGS3_CPD_TAG10=	PGS3_CPD_TAG10,
+PGS3_CAD_CARDIOGR11=	PGS3_CAD_CARDIOGR11,
+PGS3_MI_CARDIOGR15=	PGS3_MI_CARDIOGR15,
+PGS3_T2D_DIAGRAM12=	PGS3_T2D_DIAGRAM12,
+PGS3_ADHD_PGC17=	PGS3_ADHD_PGC17,
+PGS3_AUTISM_PGC17=	PGS3_AUTISM_PGC17,
+PGS3_BIP_PGC11=	PGS3_BIP_PGC11,
+PGS3_XDISORDERPGC13=	PGS3_XDISORDERPGC13,
+PGS3_MENARCHE_RPG14=	PGS3_MENARCHE_RPG14,
+PGS3_MENOPAUS_RPG15=	PGS3_MENOPAUS_RPG15,
+PGS3_CRTSL_CORNET14=	PGS3_CRTSL_CORNET14,
+PGS3_EXTRAV_GPC17=	PGS3_EXTRAV_GPC17,
+PGS3_AB_BROAD17=	PGS3_AB_BROAD17,
+PGS3_EDU3_SSGAC18=	PGS3_EDU3_SSGAC18,
+PGS3_OCD_IOCDF17=	PGS3_OCD_IOCDF17,
+PGS3_AFBC_SOCGEN16=	PGS3_AFBC_SOCGEN16,
+PGS3_AFBF_SOCGEN16 =	PGS3_AFBF_SOCGEN16,
+PGS3_AFBM_SOCGEN16 =	PGS3_AFBM_SOCGEN16,
+PGS3_MDD2_PGC18=	PGS3_MDD2_PGC18,
+PGS3_PTSDAA_PGC18 =	PGS3_PTSDAA_PGC18,
+PGS3_PTSDEA_PGC18 =	PGS3_PTSDEA_PGC18,
+PGS3_PTSDC_PGC18 =	PGS3_PTSDC_PGC18,
+PGS3_ANXFS_ANGST16=	PGS3_ANXFS_ANGST16)
+```
+
+Use lapply to perform regression on all the models set up in pgs.list
+```{r eval=FALSE}
+model.AA = lapply(pgs.list.AA, function(x)lm(resilience ~ x[[7]]+ PC1_5A + PC1_5B + PC1_5C + PC1_5D + PC1_5E, data = x))
+model.E = lapply(pgs.list.E, function(x)lm(resilience ~ x[[7]]+ PC1_5A + PC1_5B + PC1_5C + PC1_5D + PC1_5E, data = x))
+``` 
+
+
