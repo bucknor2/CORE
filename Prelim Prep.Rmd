@@ -1,0 +1,22 @@
+# Prelim Prep
+
+## Measuring Resilience
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("0001.jpg")
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("0002.jpg")
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("0003.jpg")
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("0004.jpg")
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("0005.jpg")
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("0006.jpg")
+```
