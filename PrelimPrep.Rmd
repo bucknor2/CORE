@@ -1,5 +1,38 @@
 # Prelim Prep
 
+**Task List:**
+
+&#9745; Request UKB data
+
+&#9745; Put together rough draft of survey
+
+&#9745; Request CD-RISC access
+
+&#9744; Send committee member requests (3 of 5 &check;) 
+
+&#9744; Work on outline (Scrivener?)
+
+&#9745; Set up new Git repo
+
+&#9744; Bioinformatic/annotation decisions(Aim 3)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SNP+based enrichment analysis
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GTEx
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Genome Browser
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SNPnexus
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VarioWatch
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[etc.](https://www.broadinstitute.org/genomics)
+
+
+    
+
+
+
 ## Measuring Resilience
 
 [Take the survey](https://illinoislas.qualtrics.com/jfe/form/SV_cN4hVyVIzujHq2V)
