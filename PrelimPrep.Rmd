@@ -4,7 +4,7 @@
 
 [Take the survey](https://illinoislas.qualtrics.com/jfe/form/SV_cN4hVyVIzujHq2V)
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE,out.width= "250%", message=FALSE, warning=FALSE}
 knitr::include_graphics("0001.jpg")
 ```
 ```{r echo=FALSE, message=FALSE, warning=FALSE}

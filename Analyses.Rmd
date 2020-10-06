@@ -1,5 +1,9 @@
 # Analyses
 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("0008.gif")
+```
+
 ##Constructing Resilience Measure
 
 ```{r eval=FALSE}

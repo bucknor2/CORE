@@ -1,1 +1,5 @@
 #Graphs
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("0007.gif")
+```
