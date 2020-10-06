@@ -1,10 +1,10 @@
 --- 
-title: "Current Polygenic Scores Fail to Capture Resilience"
+title: "Compendium of Resilience Research"
 author: "Brianna Bucknor"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
- 
+
 # HRS Data Wrangling
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
