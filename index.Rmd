@@ -1,5 +1,5 @@
 --- 
-title: "Compendium of Resilience Research"
+title: "Lab Notebook"
 author: "Brianna Bucknor"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
