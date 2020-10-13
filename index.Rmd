@@ -4,6 +4,8 @@ author: "Brianna Bucknor"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
+# Intro
+
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 knitr::include_graphics("0009.gif")
