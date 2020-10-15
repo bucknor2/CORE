@@ -21,3 +21,39 @@ In order to identify genetic variants associated with resilience, I will perform
 Following the GWAS of resilience, analyses will be performed to provide context and a greater understanding of the SNPs that were identified as being significantly associated with resilience. In this third aim, two follow-up analyses will be conducted. The first of which will be a SNP annotation, to provide genetic context for the SNPs. The second will be the construction of a polygenic risk score. In an independent replication sample, polygenic scores will be constructed by aggregating resilience associated SNPs to produce a single polygenic risk score of resilience. Once constructed, this score can then be used to predict individual resiliency.
 
 Together, these aims will further our understanding of the genetics of resilience and move towards potential biological mechanisms that can be acted on to produce better mental health outcomes in those exposed to stress or trauma.
+
+##Chapter 1: Introduction
+
+Brief overview 
+
+##Chapter 2: Background and Significance 
+
+###Defining Psychological Resilience
+
+###Current understanding of the Genetics of Resilience
+
+###Gap in knowledge/Dearth of research
+
+###Proposal
+
+##Chapter 3: Study 1 - Validation of Resilience Measure
+
+###Challenges to Resilience Measurment
+
+###Importance of Measurement & Validation
+
+### Approach for the proposed study
+
+##Chapter 4: Study 2 - GWAS of Resilience
+
+###Rationale for a GWAS of Resilience
+
+Echo parts from Section \@ref(S:Gap in knowledge/Dearth of research) 
+
+###Approach for proposed study
+
+##Chapter 5: Study 3 - Biological & Functional Annotation 
+
+##Chapter 6: ????
+
+

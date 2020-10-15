@@ -8,7 +8,7 @@
 
 &#9745; Request CD-RISC access
 
-&#9744; Send committee member requests (3 of 5 &check;) 
+&#9745; Send committee member requests 
 
 &#9744; Work on outline (Scrivener?)
 
