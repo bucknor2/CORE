@@ -42,15 +42,25 @@ Resilience is thought to be influenced by a variety of factors, including the en
 
 ###Defining Psychological Resilience
 
+Discuss previous study briefly 
+
 ###Current understanding of the Genetics of Resilience
 
 With advances in science and technology and increased access to large, publicly available data, many genetic studies have moved toward genome-wide association studies (GWAS) as well as polygenic scoring methods. However, when it comes to research into the genetics of resilience, few studies have used such approaches [8]. To date, there has only been one GWAS of resilience [9]. However, the study was limited by its use of a military cohort, which restricts the generalizability of the results. Another limitation of this study was its sample size (N = 11,492). When performing a GWAS, it is crucial to have a sample size greater than 100,000 as there is a high multiple testing burden that can only be surmounted by large sample sizes [10, 11]. In light of these limitations, future study is still needed to identify and understand the genetic variants contributing to the heritability observed in twin studies.
 
-###Gap in knowledge/Dearth of research
+### Addressing Gap in knowledge/Dearth of research
+
+In a recent exploratory study, I sought to determine whether this gap in knowledge could be addressed in the absence of a robust GWAS [12]. I hypothesized that a GWAS of related phenotypes (proxies) would provide a starting point for developing our understanding of the genetic mechanisms underlying resilience. The study made use of precomputed polygenic scores, derived from the GWAS of the proxies, to examine the extent to which they explained the variance observed in resilience. The benefit of this approach was that it could further our understanding of genetic variants underlying the heritability of resilience without requiring a sample size anywhere near as large as what is needed to power a GWAS [10]. For example, a sample size of 1,500 would be 90% powered to detect effect sizes around 0.1 to 0.2, the observed correlations for many psychological outcomes [10]. Though my hypothesis was conceptually sound and supported by the literature, the results of the study found that current polygenic scores are not sufficient to inform our understanding of the genetics of resilience [12]. Therefore, I concluded that a robust, large-scale GWAS of resilience is, in fact, needed to further the understanding of the genetics of resilience.
+
+With a GWAS of resilience, pathways for greater understanding of protective genetic factors that mediate stress adaptation would be opened and, with more study, could eventually lead to the development of prevention and early intervention measures for those at risk. For these benefits to be realized, though, it is imperative to have an accurate measure of resilience.
 
 ###Proposal
 
+ The benefit of studying resilience, and furthering the field's understanding of it, is that if we are able to identify the sources that account for increased resilience, we may be able to promote greater resilience in those at risk by leveraging those protective factors. More specifically, the identification of genetic markers associated with resilience could contribute to the development of mechanism-focused interventions for those who are at increased risk for the development of psychopathology. Moreover, in contrast to the study of risk, resilience research utilizes a health-based rather than a disease-based approach by focusing on factors that will increase wellbeing and result in better mental health outcomes after stress exposure.
+
 ##Chapter 3: Study 1 - Validation of Resilience Measure
+
+Discuss previous study
 
 ###Challenges to Resilience Measurment
 
@@ -62,6 +72,11 @@ knitr::include_graphics("00011.png")
 ```
 
 ###Importance of Measurement & Validation
+The importance of measurement validation in health, social, and behavioral sciences cannot be overstated.Many of the traits, disorders, and diseases assessed in these fields of study are complex and, by extension, generally latent in nature. A variable is termed latent when it cannot be measured or observed directly and instead has to be inferred from indicator variables that can be observed directly (e.g., symptoms of a disease) [14]. Since latent variables cannot be directly measured, it is important that the variables chosen—for inclusion in a scale, for example—are done so carefully as the measurement accuracy of that latent trait is completely reliant on how well the observed variables capture the latent trait [15]. In summation, the rigor of the measure and, by association, the robustness of the studies using them, is reliant upon the validity of the measurement.
+
+Assessing measurement validity becomes increasingly important when considering science is continuously evolving. One example of where this evolution is apparent is in open science practices. The interest and acceptance of open science practices only continue to grow, which has also led to increased access and availability of secondary data [16, 17]. Secondary data analysis provides an efficient and effective opportunity to address novel research questions by eliminating the hindrance of recollecting data that is readily available [17]. While there are many benefits to using secondary data, one considerable disadvantage, as discussed in relation to resilience measurement challenges, is that researchers are limited to preselected variables that may not directly address or fully encompass a trait [17]. Such restrictions can result in the need to make use of proxies, or variables that highly correlate with the trait of interest and, therefore, may serve as a valid substitute for the intended variable [18]. In the case of depression, for example, a proxy might be negative affect or the experience of at least one depressive episode. Alternatively, a measure of the trait can also be constructed from available variables if they play an etiological role, as they would be strongly related to the trait. In the case of resilience, etiologies might include exposure to stress and trauma, coping strategies, social support, absence of psychopathology, subjective wellbeing, and affect [19].
+Importantly, whether using a proxy approach or constructing a new measure, it will still be subject to the same caveat as a direct measure: reliance on its validity. Generally, the proxy and construct approach will meet the requirement for face validity. Face validity is a subjective assessment of validity; it can only tell whether a construct seems reasonable or looks like it will measure what it claims [20]. What face validity cannot determine is if the measurement actually measures what it is supposed to. For all measurements, the goal is to demonstrate construct validity. Construct validity will assess whether the approach being used to measure a construct is actually measuring what it intends [21]. It comprises various forms of validity, including content validity, convergent and divergent validity, and criterion validity. In order to meet the criterion for construct validity the measure should 1) demonstrate a clear link between the construct and the way it has been operationalized (e.g., proxy, manifest, and etiological variables), 2) have a clear conceptual and operational definition of the construct, 3) behave in a way that is consistent with the construct (e.g., correlations with construct related phenotypes are consistent) and 4) meet other tests of validity [22, 23]. When conducting a study, especially with results as potentially influential and cascading as a GWAS, it is essential to demonstrate as much construct validity as possible.
+
 
 ### Approach for the proposed study
 

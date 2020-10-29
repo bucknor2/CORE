@@ -1,326 +1,264 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Password Protected Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #dialogText {
-            padding: 10px 30px;
-            color: white;
-            background-color: #333333;
-        }
-        
-        #dialogWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: table;
-            background-color: #EEEEEE;
-        }
-        
-        #dialogWrapCell {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        #mainDialog {
-            max-width: 400px;
-            margin: 5px;
-            border: solid #AAAAAA 1px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px 3px #AAAAAA;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #FFFFFF;
-            overflow: hidden;
-            text-align: left;
-        }
-        #passArea {
-            padding: 20px 30px;
-            background-color: white;
-        }
-        #passArea > * {
-            margin: 5px auto;
-        }
-        #pass {
-            width: 100%;
-            height: 40px;
-            font-size: 30px;
-        }
-        
-        #messageWrapper {
-            float: left;
-            vertical-align: middle;
-            line-height: 30px;
-        }
-        
-        .notifyText {
-            display: none;
-        }
-        
-        #invalidPass {
-            color: red;
-        }
-        
-        #success {
-            color: green;
-        }
-        
-        #submitPass {
-            font-size: 20px;
-            border-radius: 5px;
-            background-color: #E7E7E7;
-            border: solid gray 1px;
-            float: right;
-        }
-        #contentFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        #attribution {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-        #attribution, #attribution a {
-            color: #999;
-        }
-    </style>
-  </head>
-  <body>
-    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
-    <div id="dialogWrap">
-        <div id="dialogWrapCell">
-            <div id="mainDialog">
-                <div id="dialogText">This page is password protected.</div>
-                <div id="passArea">
-                    <p id="passwordPrompt">Password</p>
-                    <input id="pass" type="password" name="pass">
-                    <div>
-                        <span id="messageWrapper">
-                            <span id="invalidPass" class="notifyText">Sorry, please try again.</span>
-                            <span id="success" class="notifyText">Success!</span>
-                            &nbsp;
-                        </span>
-                        <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 6 Drafting | Lab Notebook</title>
+  <meta name="description" content="Section 6 Drafting | Lab Notebook" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 6 Drafting | Lab Notebook" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 6 Drafting | Lab Notebook" />
+  
+  
+  
+
+<meta name="author" content="Brianna Bucknor" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prelim-prep.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">CORR</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Intro</a></li>
+<li class="chapter" data-level="2" data-path="hrs-data-wrangling.html"><a href="hrs-data-wrangling.html"><i class="fa fa-check"></i><b>2</b> HRS Data Wrangling</a><ul>
+<li class="chapter" data-level="2.1" data-path="hrs-data-wrangling.html"><a href="hrs-data-wrangling.html#attaching-data"><i class="fa fa-check"></i><b>2.1</b> Attaching Data</a></li>
+<li class="chapter" data-level="2.2" data-path="hrs-data-wrangling.html"><a href="hrs-data-wrangling.html#organizing-restructuring"><i class="fa fa-check"></i><b>2.2</b> Organizing &amp; Restructuring</a></li>
+<li class="chapter" data-level="2.3" data-path="hrs-data-wrangling.html"><a href="hrs-data-wrangling.html#filter-subset-and-organize"><i class="fa fa-check"></i><b>2.3</b> Filter, Subset, and Organize</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="analyses.html"><a href="analyses.html"><i class="fa fa-check"></i><b>3</b> Analyses</a><ul>
+<li class="chapter" data-level="3.1" data-path="analyses.html"><a href="analyses.html#regressions-brought-to-you-by-for-loops-lapply"><i class="fa fa-check"></i><b>3.1</b> Regressions: brought to you by for loops &amp; lapply!</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="graphs.html"><a href="graphs.html"><i class="fa fa-check"></i><b>4</b> Graphs</a></li>
+<li class="chapter" data-level="5" data-path="prelim-prep.html"><a href="prelim-prep.html"><i class="fa fa-check"></i><b>5</b> Prelim Prep</a><ul>
+<li class="chapter" data-level="5.1" data-path="prelim-prep.html"><a href="prelim-prep.html#measuring-resilience"><i class="fa fa-check"></i><b>5.1</b> Measuring Resilience</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="drafting.html"><a href="drafting.html"><i class="fa fa-check"></i><b>6</b> Drafting</a><ul>
+<li class="chapter" data-level="" data-path="drafting.html"><a href="drafting.html#specific-aims"><i class="fa fa-check"></i>Specific Aims</a></li>
+<li class="chapter" data-level="6.1" data-path="drafting.html"><a href="drafting.html#chapter-1-introduction"><i class="fa fa-check"></i><b>6.1</b> Chapter 1: Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="drafting.html"><a href="drafting.html#chapter-2-background-and-significance"><i class="fa fa-check"></i><b>6.2</b> Chapter 2: Background and Significance</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="drafting.html"><a href="drafting.html#defining-psychological-resilience"><i class="fa fa-check"></i><b>6.2.1</b> Defining Psychological Resilience</a></li>
+<li class="chapter" data-level="6.2.2" data-path="drafting.html"><a href="drafting.html#current-understanding-of-the-genetics-of-resilience"><i class="fa fa-check"></i><b>6.2.2</b> Current understanding of the Genetics of Resilience</a></li>
+<li class="chapter" data-level="6.2.3" data-path="drafting.html"><a href="drafting.html#addressing-gap-in-knowledgedearth-of-research"><i class="fa fa-check"></i><b>6.2.3</b> Addressing Gap in knowledge/Dearth of research</a></li>
+<li class="chapter" data-level="6.2.4" data-path="drafting.html"><a href="drafting.html#proposal"><i class="fa fa-check"></i><b>6.2.4</b> Proposal</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="drafting.html"><a href="drafting.html#chapter-3-study-1---validation-of-resilience-measure"><i class="fa fa-check"></i><b>6.3</b> Chapter 3: Study 1 - Validation of Resilience Measure</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="drafting.html"><a href="drafting.html#challenges-to-resilience-measurment"><i class="fa fa-check"></i><b>6.3.1</b> Challenges to Resilience Measurment</a></li>
+<li class="chapter" data-level="6.3.2" data-path="drafting.html"><a href="drafting.html#importance-of-measurement-validation"><i class="fa fa-check"></i><b>6.3.2</b> Importance of Measurement &amp; Validation</a></li>
+<li class="chapter" data-level="6.3.3" data-path="drafting.html"><a href="drafting.html#approach-for-the-proposed-study"><i class="fa fa-check"></i><b>6.3.3</b> Approach for the proposed study</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="drafting.html"><a href="drafting.html#chapter-4-study-2---gwas-of-resilience"><i class="fa fa-check"></i><b>6.4</b> Chapter 4: Study 2 - GWAS of Resilience</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="drafting.html"><a href="drafting.html#rationale-for-a-gwas-of-resilience"><i class="fa fa-check"></i><b>6.4.1</b> Rationale for a GWAS of Resilience</a></li>
+<li class="chapter" data-level="6.4.2" data-path="drafting.html"><a href="drafting.html#approach-for-proposed-study"><i class="fa fa-check"></i><b>6.4.2</b> Approach for proposed study</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="drafting.html"><a href="drafting.html#chapter-5-study-3---biological-functional-annotation"><i class="fa fa-check"></i><b>6.5</b> Chapter 5: Study 3 - Biological &amp; Functional Annotation</a></li>
+<li class="chapter" data-level="6.6" data-path="drafting.html"><a href="drafting.html#chapter-6"><i class="fa fa-check"></i><b>6.6</b> Chapter 6: ????</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Lab Notebook</a>
+          </h1>
         </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="drafting" class="section level1">
+<h1><span class="header-section-number">Section 6</span> Drafting</h1>
+<script type="application/json" class="js-hypothesis-config">
+  {
+    "openSidebar": true
+  }
+</script>
+<script async src="https://hypothes.is/embed.js"></script>
+<div id="specific-aims" class="section level2 unnumbered">
+<h2>Specific Aims</h2>
+<p>Psychological resilience can be defined as one’s ability to successfully cope in the face of stress and trauma and either maintain a pre-stress level of psychological and physiological functioning or quickly return to it. Studies of resilience have identified it to be a multifaceted trait influenced by factors such as social support, socioeconomic status, successful termination of stress responses, and developmental timing of stress. Resilience has also been identified to be moderately heritable, evidencing a genetic component to the trait. While there is support for the influence of genetics in resilience, the genetic variants that contribute to the observed heritability are not well understood. In order to address this gap in knowledge, I propose a robust, large-scale genome-wide association study (GWAS) of resilience as well as follow-up analyses to investigate the polygenic nature of resilience further. In order to accomplish the proposed research, I will make use of secondary data available through UK Biobank. UK Biobank is a large population-based cohort that consists of survey data, which will allow for the construction of the resilience measure, as well as provide the genetic data needed to perform the GWAS. In addition, the identification of genetic variants will allow for further investigation of the extent to which their associated genes aggregate within influential pathways. Importantly, understanding the genetics of resilience can also contribute to the development of mechanism-focused interventions for those who are at increased risk for the development of psychopathology.</p>
+<p>In order to accomplish the goals of this project, I propose three specific aims:</p>
+<p><strong>Aim 1: Validate Scoring Algorithm to Convert Widely Available Psychological Assessments into Resiliency via Comparison with Established Measure Using a Large Online Sample</strong></p>
+<p>As resilience is not directly measured in any existing large-scale genetic dataset, the first aim of the project is to validate my operational definition of resilience. Taking steps to validate the measure helps to ensure the GWAS will be as robust as possible, as measurement inaccuracies can result in unreliable results.</p>
+<p>Resilience will be operationalized as negative affect residualized over stress and trauma. These measures will be obtained from survey data available through UK Biobank. In order to validate this construct of resilience, I will test it within a sample of the general population and assess how strongly it correlates with the Connor-Davidson Resilience Scale, the most commonly used measure of resilience. I hypothesize that they will be strongly correlated based on my recent exploratory study of polygenic proxies of resilience, which found this to be a robust operationalization of resilience.</p>
+<p><strong>Aim 2: Perform a Genome-Wide Association Study of Resilience in the UK Biobank (N &gt; 150,000)</strong></p>
+<p>In order to identify genetic variants associated with resilience, I will perform a genome-wide association study (GWAS). To date, only one GWAS of resilience has been done but was limited by its sample size and generalizability. The proposed GWAS of resilience will improve on the one previously performed by leveraging a large sample size (N &gt; 150,000) and a population-based cohort. The UK Biobank data will undergo seven specific quality control procedures before conducting the genome-wide association analyses. The results of the GWAS will identify which genetic variants (i.e., single nucleotide polymorphisms) are significantly associated with resilience at P &lt; 5×10−8. These significant single nucleotide polymorphisms (SNPs) will then undergo further analyses in aim three, to better understand their relationship with resilience.</p>
+<p><strong>Aim 3: Follow-up Analyses of GWAS Results to Investigate Biological Relevance and Polygenic Nature</strong></p>
+<p>Following the GWAS of resilience, analyses will be performed to provide context and a greater understanding of the SNPs that were identified as being significantly associated with resilience. In this third aim, two follow-up analyses will be conducted. The first of which will be a SNP annotation, to provide genetic context for the SNPs. The second will be the construction of a polygenic risk score. In an independent replication sample, polygenic scores will be constructed by aggregating resilience associated SNPs to produce a single polygenic risk score of resilience. Once constructed, this score can then be used to predict individual resiliency.</p>
+<p>Together, these aims will further our understanding of the genetics of resilience and move towards potential biological mechanisms that can be acted on to produce better mental health outcomes in those exposed to stress or trauma.</p>
+</div>
+<div id="chapter-1-introduction" class="section level2">
+<h2><span class="header-section-number">6.1</span> Chapter 1: Introduction</h2>
+<p>Brief overview</p>
+</div>
+<div id="chapter-2-background-and-significance" class="section level2">
+<h2><span class="header-section-number">6.2</span> Chapter 2: Background and Significance</h2>
+<p>Stress is one of the strongest and most consistently identified risk factors for the development of psychopathology [1]. As most people will experience some form of stress or trauma within their lifetime [2], understanding the relationship between stress and poor mental health outcomes is paramount. One approach that could help further our understanding of protective factors that defend against the development of psychopathology is through the study of psychological resilience. Psychological resilience is defined as the ability to maintain stable and healthy levels of psychological functioning after exposure to stress or other highly disruptive events [3]. While most people tend to be resilient, the reason why some individuals will develop psychopathology while others will maintain healthy levels of psychological function is not fully understood.</p>
+<p>Resilience is thought to be influenced by a variety of factors, including the environment, cognitive-behavioral patterns, and genetics. While much research has focused on social and environmental factors that influence resilience, there has been a dearth of research into the genetics of resilience. Twin studies of resilience have identified it to be moderately heritable (31-52%) [4, 5], supporting genetic influences on the trait. However, to date, there are no replicable links to any genetic variant [6]. As a result, there is a significant gap in knowledge related to the genetic variants that account for the observed heritability [7, 8]. Closing this gap is not without challenges, though, as there are two roadblocks to progress: the need for a large-scale GWAS and consensus on the assessment of resilience [8].</p>
+<div id="defining-psychological-resilience" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Defining Psychological Resilience</h3>
+<p>Discuss previous study briefly</p>
+</div>
+<div id="current-understanding-of-the-genetics-of-resilience" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Current understanding of the Genetics of Resilience</h3>
+<p>With advances in science and technology and increased access to large, publicly available data, many genetic studies have moved toward genome-wide association studies (GWAS) as well as polygenic scoring methods. However, when it comes to research into the genetics of resilience, few studies have used such approaches [8]. To date, there has only been one GWAS of resilience [9]. However, the study was limited by its use of a military cohort, which restricts the generalizability of the results. Another limitation of this study was its sample size (N = 11,492). When performing a GWAS, it is crucial to have a sample size greater than 100,000 as there is a high multiple testing burden that can only be surmounted by large sample sizes [10, 11]. In light of these limitations, future study is still needed to identify and understand the genetic variants contributing to the heritability observed in twin studies.</p>
+</div>
+<div id="addressing-gap-in-knowledgedearth-of-research" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Addressing Gap in knowledge/Dearth of research</h3>
+<p>In a recent exploratory study, I sought to determine whether this gap in knowledge could be addressed in the absence of a robust GWAS [12]. I hypothesized that a GWAS of related phenotypes (proxies) would provide a starting point for developing our understanding of the genetic mechanisms underlying resilience. The study made use of precomputed polygenic scores, derived from the GWAS of the proxies, to examine the extent to which they explained the variance observed in resilience. The benefit of this approach was that it could further our understanding of genetic variants underlying the heritability of resilience without requiring a sample size anywhere near as large as what is needed to power a GWAS [10]. For example, a sample size of 1,500 would be 90% powered to detect effect sizes around 0.1 to 0.2, the observed correlations for many psychological outcomes [10]. Though my hypothesis was conceptually sound and supported by the literature, the results of the study found that current polygenic scores are not sufficient to inform our understanding of the genetics of resilience [12]. Therefore, I concluded that a robust, large-scale GWAS of resilience is, in fact, needed to further the understanding of the genetics of resilience.</p>
+<p>With a GWAS of resilience, pathways for greater understanding of protective genetic factors that mediate stress adaptation would be opened and, with more study, could eventually lead to the development of prevention and early intervention measures for those at risk. For these benefits to be realized, though, it is imperative to have an accurate measure of resilience.</p>
+</div>
+<div id="proposal" class="section level3">
+<h3><span class="header-section-number">6.2.4</span> Proposal</h3>
+<p>The benefit of studying resilience, and furthering the field's understanding of it, is that if we are able to identify the sources that account for increased resilience, we may be able to promote greater resilience in those at risk by leveraging those protective factors. More specifically, the identification of genetic markers associated with resilience could contribute to the development of mechanism-focused interventions for those who are at increased risk for the development of psychopathology. Moreover, in contrast to the study of risk, resilience research utilizes a health-based rather than a disease-based approach by focusing on factors that will increase wellbeing and result in better mental health outcomes after stress exposure.</p>
+</div>
+</div>
+<div id="chapter-3-study-1---validation-of-resilience-measure" class="section level2">
+<h2><span class="header-section-number">6.3</span> Chapter 3: Study 1 - Validation of Resilience Measure</h2>
+<p>Discuss previous study</p>
+<div id="challenges-to-resilience-measurment" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Challenges to Resilience Measurment</h3>
+<p>In comparison to other psychological traits, the study of resilience is relatively recent [13]. As a result, researchers still have not agreed on the best way to measure or even define psychological resilience [8]. Moreover, few large-scale datasets include a direct measure of resilience and those that do, do not have genetic data. As a result, resilience researchers are consistently put in the position of having to weigh measurement quality against statistical power. This balancing act and its associated consequences are reflected in the aforementioned GWAS of resilience. While the dataset used in that study did have direct measures of resilience, statistical power was constricted due to the modest sample size. If a large sample size is imperative to the study, as is the case for a GWAS, there are only two feasible options. One is to obtain a large sample of participants and directly measure resilience, which could be both costly and time-consuming. The second is to construct a measure of resilience from the variables that are available in these large-scale datasets. Out of these options, constructing a measure of resilience in a large dataset presents the most efficient path forward for a robust GWAS of resilience. This approach has advantages, as it not only allows for the preservation of a larger sample size but would also be both time- and cost-effective. An example of the construction of a measure of resilience when one is not available can be seen in my exploratory study of the genetics of resilience discussed earlier [12]. In that study, resilience was operationalized as negative affect residualized over stress and was found to be a valid operational definition of resilience [12]. The residuals identify deviations from the model's line of prediction and, therefore, can pick out individuals who were experiencing greater or lesser negative affect than the model predicted based on their level of stress. This is visually represented in Figure 1, where positive residual values indicate lower amounts of negative affect than predicted, indicating greater resilience. Conversely, negative residual values would indicate higher levels of negative affect than predicted, indicating decreased resilience or greater susceptibility. This represents a well-developed construct of resilience, and if proper steps are taken to validate the construct, the quality of the measurement can be raised to a level similar to that of direct measures of resilience.</p>
+<p><img src="00011.png" width="749" /></p>
+</div>
+<div id="importance-of-measurement-validation" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Importance of Measurement &amp; Validation</h3>
+<p>The importance of measurement validation in health, social, and behavioral sciences cannot be overstated.Many of the traits, disorders, and diseases assessed in these fields of study are complex and, by extension, generally latent in nature. A variable is termed latent when it cannot be measured or observed directly and instead has to be inferred from indicator variables that can be observed directly (e.g., symptoms of a disease) [14]. Since latent variables cannot be directly measured, it is important that the variables chosen—for inclusion in a scale, for example—are done so carefully as the measurement accuracy of that latent trait is completely reliant on how well the observed variables capture the latent trait [15]. In summation, the rigor of the measure and, by association, the robustness of the studies using them, is reliant upon the validity of the measurement.</p>
+<p>Assessing measurement validity becomes increasingly important when considering science is continuously evolving. One example of where this evolution is apparent is in open science practices. The interest and acceptance of open science practices only continue to grow, which has also led to increased access and availability of secondary data [16, 17]. Secondary data analysis provides an efficient and effective opportunity to address novel research questions by eliminating the hindrance of recollecting data that is readily available [17]. While there are many benefits to using secondary data, one considerable disadvantage, as discussed in relation to resilience measurement challenges, is that researchers are limited to preselected variables that may not directly address or fully encompass a trait [17]. Such restrictions can result in the need to make use of proxies, or variables that highly correlate with the trait of interest and, therefore, may serve as a valid substitute for the intended variable [18]. In the case of depression, for example, a proxy might be negative affect or the experience of at least one depressive episode. Alternatively, a measure of the trait can also be constructed from available variables if they play an etiological role, as they would be strongly related to the trait. In the case of resilience, etiologies might include exposure to stress and trauma, coping strategies, social support, absence of psychopathology, subjective wellbeing, and affect [19]. Importantly, whether using a proxy approach or constructing a new measure, it will still be subject to the same caveat as a direct measure: reliance on its validity. Generally, the proxy and construct approach will meet the requirement for face validity. Face validity is a subjective assessment of validity; it can only tell whether a construct seems reasonable or looks like it will measure what it claims [20]. What face validity cannot determine is if the measurement actually measures what it is supposed to. For all measurements, the goal is to demonstrate construct validity. Construct validity will assess whether the approach being used to measure a construct is actually measuring what it intends [21]. It comprises various forms of validity, including content validity, convergent and divergent validity, and criterion validity. In order to meet the criterion for construct validity the measure should 1) demonstrate a clear link between the construct and the way it has been operationalized (e.g., proxy, manifest, and etiological variables), 2) have a clear conceptual and operational definition of the construct, 3) behave in a way that is consistent with the construct (e.g., correlations with construct related phenotypes are consistent) and 4) meet other tests of validity [22, 23]. When conducting a study, especially with results as potentially influential and cascading as a GWAS, it is essential to demonstrate as much construct validity as possible.</p>
+</div>
+<div id="approach-for-the-proposed-study" class="section level3">
+<h3><span class="header-section-number">6.3.3</span> Approach for the proposed study</h3>
+</div>
+</div>
+<div id="chapter-4-study-2---gwas-of-resilience" class="section level2">
+<h2><span class="header-section-number">6.4</span> Chapter 4: Study 2 - GWAS of Resilience</h2>
+<div id="rationale-for-a-gwas-of-resilience" class="section level3">
+<h3><span class="header-section-number">6.4.1</span> Rationale for a GWAS of Resilience</h3>
+<p>With a GWAS of resilience, pathways for greater understanding of protective genetic factors that mediate stress adaptation would be opened and, with more study, could eventually lead to the development of prevention and early intervention measures for those at risk. For these benefits to be realized, though, it is imperative to have an accurate measure of resilience.</p>
+</div>
+<div id="approach-for-proposed-study" class="section level3">
+<h3><span class="header-section-number">6.4.2</span> Approach for proposed study</h3>
+</div>
+</div>
+<div id="chapter-5-study-3---biological-functional-annotation" class="section level2">
+<h2><span class="header-section-number">6.5</span> Chapter 5: Study 3 - Biological &amp; Functional Annotation</h2>
+</div>
+<div id="chapter-6" class="section level2">
+<h2><span class="header-section-number">6.6</span> Chapter 6: ????</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prelim-prep.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
-    <div id="attribution">
-        Protected by <a href="https://www.maxlaumeister.com/pagecrypt/">PageCrypt</a>
-    </div>
-    <script>
-/*
-CryptoJS v3.1.2
-code.google.com/p/crypto-js
-(c) 2009-2013 by Jeff Mott. All rights reserved.
-code.google.com/p/crypto-js/wiki/License
-*/
-var CryptoJS=CryptoJS||function(u,p){var d={},l=d.lib={},s=function(){},t=l.Base={extend:function(a){s.prototype=this;var c=new s;a&&c.mixIn(a);c.hasOwnProperty("init")||(c.init=function(){c.$super.init.apply(this,arguments)});c.init.prototype=c;c.$super=this;return c},create:function(){var a=this.extend();a.init.apply(a,arguments);return a},init:function(){},mixIn:function(a){for(var c in a)a.hasOwnProperty(c)&&(this[c]=a[c]);a.hasOwnProperty("toString")&&(this.toString=a.toString)},clone:function(){return this.init.prototype.extend(this)}},
-r=l.WordArray=t.extend({init:function(a,c){a=this.words=a||[];this.sigBytes=c!=p?c:4*a.length},toString:function(a){return(a||v).stringify(this)},concat:function(a){var c=this.words,e=a.words,j=this.sigBytes;a=a.sigBytes;this.clamp();if(j%4)for(var k=0;k<a;k++)c[j+k>>>2]|=(e[k>>>2]>>>24-8*(k%4)&255)<<24-8*((j+k)%4);else if(65535<e.length)for(k=0;k<a;k+=4)c[j+k>>>2]=e[k>>>2];else c.push.apply(c,e);this.sigBytes+=a;return this},clamp:function(){var a=this.words,c=this.sigBytes;a[c>>>2]&=4294967295<<
-32-8*(c%4);a.length=u.ceil(c/4)},clone:function(){var a=t.clone.call(this);a.words=this.words.slice(0);return a},random:function(a){for(var c=[],e=0;e<a;e+=4)c.push(4294967296*u.random()|0);return new r.init(c,a)}}),w=d.enc={},v=w.Hex={stringify:function(a){var c=a.words;a=a.sigBytes;for(var e=[],j=0;j<a;j++){var k=c[j>>>2]>>>24-8*(j%4)&255;e.push((k>>>4).toString(16));e.push((k&15).toString(16))}return e.join("")},parse:function(a){for(var c=a.length,e=[],j=0;j<c;j+=2)e[j>>>3]|=parseInt(a.substr(j,
-2),16)<<24-4*(j%8);return new r.init(e,c/2)}},b=w.Latin1={stringify:function(a){var c=a.words;a=a.sigBytes;for(var e=[],j=0;j<a;j++)e.push(String.fromCharCode(c[j>>>2]>>>24-8*(j%4)&255));return e.join("")},parse:function(a){for(var c=a.length,e=[],j=0;j<c;j++)e[j>>>2]|=(a.charCodeAt(j)&255)<<24-8*(j%4);return new r.init(e,c)}},x=w.Utf8={stringify:function(a){try{return decodeURIComponent(escape(b.stringify(a)))}catch(c){throw Error("Malformed UTF-8 data");}},parse:function(a){return b.parse(unescape(encodeURIComponent(a)))}},
-q=l.BufferedBlockAlgorithm=t.extend({reset:function(){this._data=new r.init;this._nDataBytes=0},_append:function(a){"string"==typeof a&&(a=x.parse(a));this._data.concat(a);this._nDataBytes+=a.sigBytes},_process:function(a){var c=this._data,e=c.words,j=c.sigBytes,k=this.blockSize,b=j/(4*k),b=a?u.ceil(b):u.max((b|0)-this._minBufferSize,0);a=b*k;j=u.min(4*a,j);if(a){for(var q=0;q<a;q+=k)this._doProcessBlock(e,q);q=e.splice(0,a);c.sigBytes-=j}return new r.init(q,j)},clone:function(){var a=t.clone.call(this);
-a._data=this._data.clone();return a},_minBufferSize:0});l.Hasher=q.extend({cfg:t.extend(),init:function(a){this.cfg=this.cfg.extend(a);this.reset()},reset:function(){q.reset.call(this);this._doReset()},update:function(a){this._append(a);this._process();return this},finalize:function(a){a&&this._append(a);return this._doFinalize()},blockSize:16,_createHelper:function(a){return function(b,e){return(new a.init(e)).finalize(b)}},_createHmacHelper:function(a){return function(b,e){return(new n.HMAC.init(a,
-e)).finalize(b)}}});var n=d.algo={};return d}(Math);
-(function(){var u=CryptoJS,p=u.lib.WordArray;u.enc.Base64={stringify:function(d){var l=d.words,p=d.sigBytes,t=this._map;d.clamp();d=[];for(var r=0;r<p;r+=3)for(var w=(l[r>>>2]>>>24-8*(r%4)&255)<<16|(l[r+1>>>2]>>>24-8*((r+1)%4)&255)<<8|l[r+2>>>2]>>>24-8*((r+2)%4)&255,v=0;4>v&&r+0.75*v<p;v++)d.push(t.charAt(w>>>6*(3-v)&63));if(l=t.charAt(64))for(;d.length%4;)d.push(l);return d.join("")},parse:function(d){var l=d.length,s=this._map,t=s.charAt(64);t&&(t=d.indexOf(t),-1!=t&&(l=t));for(var t=[],r=0,w=0;w<
-l;w++)if(w%4){var v=s.indexOf(d.charAt(w-1))<<2*(w%4),b=s.indexOf(d.charAt(w))>>>6-2*(w%4);t[r>>>2]|=(v|b)<<24-8*(r%4);r++}return p.create(t,r)},_map:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="}})();
-(function(u){function p(b,n,a,c,e,j,k){b=b+(n&a|~n&c)+e+k;return(b<<j|b>>>32-j)+n}function d(b,n,a,c,e,j,k){b=b+(n&c|a&~c)+e+k;return(b<<j|b>>>32-j)+n}function l(b,n,a,c,e,j,k){b=b+(n^a^c)+e+k;return(b<<j|b>>>32-j)+n}function s(b,n,a,c,e,j,k){b=b+(a^(n|~c))+e+k;return(b<<j|b>>>32-j)+n}for(var t=CryptoJS,r=t.lib,w=r.WordArray,v=r.Hasher,r=t.algo,b=[],x=0;64>x;x++)b[x]=4294967296*u.abs(u.sin(x+1))|0;r=r.MD5=v.extend({_doReset:function(){this._hash=new w.init([1732584193,4023233417,2562383102,271733878])},
-_doProcessBlock:function(q,n){for(var a=0;16>a;a++){var c=n+a,e=q[c];q[c]=(e<<8|e>>>24)&16711935|(e<<24|e>>>8)&4278255360}var a=this._hash.words,c=q[n+0],e=q[n+1],j=q[n+2],k=q[n+3],z=q[n+4],r=q[n+5],t=q[n+6],w=q[n+7],v=q[n+8],A=q[n+9],B=q[n+10],C=q[n+11],u=q[n+12],D=q[n+13],E=q[n+14],x=q[n+15],f=a[0],m=a[1],g=a[2],h=a[3],f=p(f,m,g,h,c,7,b[0]),h=p(h,f,m,g,e,12,b[1]),g=p(g,h,f,m,j,17,b[2]),m=p(m,g,h,f,k,22,b[3]),f=p(f,m,g,h,z,7,b[4]),h=p(h,f,m,g,r,12,b[5]),g=p(g,h,f,m,t,17,b[6]),m=p(m,g,h,f,w,22,b[7]),
-f=p(f,m,g,h,v,7,b[8]),h=p(h,f,m,g,A,12,b[9]),g=p(g,h,f,m,B,17,b[10]),m=p(m,g,h,f,C,22,b[11]),f=p(f,m,g,h,u,7,b[12]),h=p(h,f,m,g,D,12,b[13]),g=p(g,h,f,m,E,17,b[14]),m=p(m,g,h,f,x,22,b[15]),f=d(f,m,g,h,e,5,b[16]),h=d(h,f,m,g,t,9,b[17]),g=d(g,h,f,m,C,14,b[18]),m=d(m,g,h,f,c,20,b[19]),f=d(f,m,g,h,r,5,b[20]),h=d(h,f,m,g,B,9,b[21]),g=d(g,h,f,m,x,14,b[22]),m=d(m,g,h,f,z,20,b[23]),f=d(f,m,g,h,A,5,b[24]),h=d(h,f,m,g,E,9,b[25]),g=d(g,h,f,m,k,14,b[26]),m=d(m,g,h,f,v,20,b[27]),f=d(f,m,g,h,D,5,b[28]),h=d(h,f,
-m,g,j,9,b[29]),g=d(g,h,f,m,w,14,b[30]),m=d(m,g,h,f,u,20,b[31]),f=l(f,m,g,h,r,4,b[32]),h=l(h,f,m,g,v,11,b[33]),g=l(g,h,f,m,C,16,b[34]),m=l(m,g,h,f,E,23,b[35]),f=l(f,m,g,h,e,4,b[36]),h=l(h,f,m,g,z,11,b[37]),g=l(g,h,f,m,w,16,b[38]),m=l(m,g,h,f,B,23,b[39]),f=l(f,m,g,h,D,4,b[40]),h=l(h,f,m,g,c,11,b[41]),g=l(g,h,f,m,k,16,b[42]),m=l(m,g,h,f,t,23,b[43]),f=l(f,m,g,h,A,4,b[44]),h=l(h,f,m,g,u,11,b[45]),g=l(g,h,f,m,x,16,b[46]),m=l(m,g,h,f,j,23,b[47]),f=s(f,m,g,h,c,6,b[48]),h=s(h,f,m,g,w,10,b[49]),g=s(g,h,f,m,
-E,15,b[50]),m=s(m,g,h,f,r,21,b[51]),f=s(f,m,g,h,u,6,b[52]),h=s(h,f,m,g,k,10,b[53]),g=s(g,h,f,m,B,15,b[54]),m=s(m,g,h,f,e,21,b[55]),f=s(f,m,g,h,v,6,b[56]),h=s(h,f,m,g,x,10,b[57]),g=s(g,h,f,m,t,15,b[58]),m=s(m,g,h,f,D,21,b[59]),f=s(f,m,g,h,z,6,b[60]),h=s(h,f,m,g,C,10,b[61]),g=s(g,h,f,m,j,15,b[62]),m=s(m,g,h,f,A,21,b[63]);a[0]=a[0]+f|0;a[1]=a[1]+m|0;a[2]=a[2]+g|0;a[3]=a[3]+h|0},_doFinalize:function(){var b=this._data,n=b.words,a=8*this._nDataBytes,c=8*b.sigBytes;n[c>>>5]|=128<<24-c%32;var e=u.floor(a/
-4294967296);n[(c+64>>>9<<4)+15]=(e<<8|e>>>24)&16711935|(e<<24|e>>>8)&4278255360;n[(c+64>>>9<<4)+14]=(a<<8|a>>>24)&16711935|(a<<24|a>>>8)&4278255360;b.sigBytes=4*(n.length+1);this._process();b=this._hash;n=b.words;for(a=0;4>a;a++)c=n[a],n[a]=(c<<8|c>>>24)&16711935|(c<<24|c>>>8)&4278255360;return b},clone:function(){var b=v.clone.call(this);b._hash=this._hash.clone();return b}});t.MD5=v._createHelper(r);t.HmacMD5=v._createHmacHelper(r)})(Math);
-(function(){var u=CryptoJS,p=u.lib,d=p.Base,l=p.WordArray,p=u.algo,s=p.EvpKDF=d.extend({cfg:d.extend({keySize:4,hasher:p.MD5,iterations:1}),init:function(d){this.cfg=this.cfg.extend(d)},compute:function(d,r){for(var p=this.cfg,s=p.hasher.create(),b=l.create(),u=b.words,q=p.keySize,p=p.iterations;u.length<q;){n&&s.update(n);var n=s.update(d).finalize(r);s.reset();for(var a=1;a<p;a++)n=s.finalize(n),s.reset();b.concat(n)}b.sigBytes=4*q;return b}});u.EvpKDF=function(d,l,p){return s.create(p).compute(d,
-l)}})();
-CryptoJS.lib.Cipher||function(u){var p=CryptoJS,d=p.lib,l=d.Base,s=d.WordArray,t=d.BufferedBlockAlgorithm,r=p.enc.Base64,w=p.algo.EvpKDF,v=d.Cipher=t.extend({cfg:l.extend(),createEncryptor:function(e,a){return this.create(this._ENC_XFORM_MODE,e,a)},createDecryptor:function(e,a){return this.create(this._DEC_XFORM_MODE,e,a)},init:function(e,a,b){this.cfg=this.cfg.extend(b);this._xformMode=e;this._key=a;this.reset()},reset:function(){t.reset.call(this);this._doReset()},process:function(e){this._append(e);return this._process()},
-finalize:function(e){e&&this._append(e);return this._doFinalize()},keySize:4,ivSize:4,_ENC_XFORM_MODE:1,_DEC_XFORM_MODE:2,_createHelper:function(e){return{encrypt:function(b,k,d){return("string"==typeof k?c:a).encrypt(e,b,k,d)},decrypt:function(b,k,d){return("string"==typeof k?c:a).decrypt(e,b,k,d)}}}});d.StreamCipher=v.extend({_doFinalize:function(){return this._process(!0)},blockSize:1});var b=p.mode={},x=function(e,a,b){var c=this._iv;c?this._iv=u:c=this._prevBlock;for(var d=0;d<b;d++)e[a+d]^=
-c[d]},q=(d.BlockCipherMode=l.extend({createEncryptor:function(e,a){return this.Encryptor.create(e,a)},createDecryptor:function(e,a){return this.Decryptor.create(e,a)},init:function(e,a){this._cipher=e;this._iv=a}})).extend();q.Encryptor=q.extend({processBlock:function(e,a){var b=this._cipher,c=b.blockSize;x.call(this,e,a,c);b.encryptBlock(e,a);this._prevBlock=e.slice(a,a+c)}});q.Decryptor=q.extend({processBlock:function(e,a){var b=this._cipher,c=b.blockSize,d=e.slice(a,a+c);b.decryptBlock(e,a);x.call(this,
-e,a,c);this._prevBlock=d}});b=b.CBC=q;q=(p.pad={}).Pkcs7={pad:function(a,b){for(var c=4*b,c=c-a.sigBytes%c,d=c<<24|c<<16|c<<8|c,l=[],n=0;n<c;n+=4)l.push(d);c=s.create(l,c);a.concat(c)},unpad:function(a){a.sigBytes-=a.words[a.sigBytes-1>>>2]&255}};d.BlockCipher=v.extend({cfg:v.cfg.extend({mode:b,padding:q}),reset:function(){v.reset.call(this);var a=this.cfg,b=a.iv,a=a.mode;if(this._xformMode==this._ENC_XFORM_MODE)var c=a.createEncryptor;else c=a.createDecryptor,this._minBufferSize=1;this._mode=c.call(a,
-this,b&&b.words)},_doProcessBlock:function(a,b){this._mode.processBlock(a,b)},_doFinalize:function(){var a=this.cfg.padding;if(this._xformMode==this._ENC_XFORM_MODE){a.pad(this._data,this.blockSize);var b=this._process(!0)}else b=this._process(!0),a.unpad(b);return b},blockSize:4});var n=d.CipherParams=l.extend({init:function(a){this.mixIn(a)},toString:function(a){return(a||this.formatter).stringify(this)}}),b=(p.format={}).OpenSSL={stringify:function(a){var b=a.ciphertext;a=a.salt;return(a?s.create([1398893684,
-1701076831]).concat(a).concat(b):b).toString(r)},parse:function(a){a=r.parse(a);var b=a.words;if(1398893684==b[0]&&1701076831==b[1]){var c=s.create(b.slice(2,4));b.splice(0,4);a.sigBytes-=16}return n.create({ciphertext:a,salt:c})}},a=d.SerializableCipher=l.extend({cfg:l.extend({format:b}),encrypt:function(a,b,c,d){d=this.cfg.extend(d);var l=a.createEncryptor(c,d);b=l.finalize(b);l=l.cfg;return n.create({ciphertext:b,key:c,iv:l.iv,algorithm:a,mode:l.mode,padding:l.padding,blockSize:a.blockSize,formatter:d.format})},
-decrypt:function(a,b,c,d){d=this.cfg.extend(d);b=this._parse(b,d.format);return a.createDecryptor(c,d).finalize(b.ciphertext)},_parse:function(a,b){return"string"==typeof a?b.parse(a,this):a}}),p=(p.kdf={}).OpenSSL={execute:function(a,b,c,d){d||(d=s.random(8));a=w.create({keySize:b+c}).compute(a,d);c=s.create(a.words.slice(b),4*c);a.sigBytes=4*b;return n.create({key:a,iv:c,salt:d})}},c=d.PasswordBasedCipher=a.extend({cfg:a.cfg.extend({kdf:p}),encrypt:function(b,c,d,l){l=this.cfg.extend(l);d=l.kdf.execute(d,
-b.keySize,b.ivSize);l.iv=d.iv;b=a.encrypt.call(this,b,c,d.key,l);b.mixIn(d);return b},decrypt:function(b,c,d,l){l=this.cfg.extend(l);c=this._parse(c,l.format);d=l.kdf.execute(d,b.keySize,b.ivSize,c.salt);l.iv=d.iv;return a.decrypt.call(this,b,c,d.key,l)}})}();
-(function(){for(var u=CryptoJS,p=u.lib.BlockCipher,d=u.algo,l=[],s=[],t=[],r=[],w=[],v=[],b=[],x=[],q=[],n=[],a=[],c=0;256>c;c++)a[c]=128>c?c<<1:c<<1^283;for(var e=0,j=0,c=0;256>c;c++){var k=j^j<<1^j<<2^j<<3^j<<4,k=k>>>8^k&255^99;l[e]=k;s[k]=e;var z=a[e],F=a[z],G=a[F],y=257*a[k]^16843008*k;t[e]=y<<24|y>>>8;r[e]=y<<16|y>>>16;w[e]=y<<8|y>>>24;v[e]=y;y=16843009*G^65537*F^257*z^16843008*e;b[k]=y<<24|y>>>8;x[k]=y<<16|y>>>16;q[k]=y<<8|y>>>24;n[k]=y;e?(e=z^a[a[a[G^z]]],j^=a[a[j]]):e=j=1}var H=[0,1,2,4,8,
-16,32,64,128,27,54],d=d.AES=p.extend({_doReset:function(){for(var a=this._key,c=a.words,d=a.sigBytes/4,a=4*((this._nRounds=d+6)+1),e=this._keySchedule=[],j=0;j<a;j++)if(j<d)e[j]=c[j];else{var k=e[j-1];j%d?6<d&&4==j%d&&(k=l[k>>>24]<<24|l[k>>>16&255]<<16|l[k>>>8&255]<<8|l[k&255]):(k=k<<8|k>>>24,k=l[k>>>24]<<24|l[k>>>16&255]<<16|l[k>>>8&255]<<8|l[k&255],k^=H[j/d|0]<<24);e[j]=e[j-d]^k}c=this._invKeySchedule=[];for(d=0;d<a;d++)j=a-d,k=d%4?e[j]:e[j-4],c[d]=4>d||4>=j?k:b[l[k>>>24]]^x[l[k>>>16&255]]^q[l[k>>>
-8&255]]^n[l[k&255]]},encryptBlock:function(a,b){this._doCryptBlock(a,b,this._keySchedule,t,r,w,v,l)},decryptBlock:function(a,c){var d=a[c+1];a[c+1]=a[c+3];a[c+3]=d;this._doCryptBlock(a,c,this._invKeySchedule,b,x,q,n,s);d=a[c+1];a[c+1]=a[c+3];a[c+3]=d},_doCryptBlock:function(a,b,c,d,e,j,l,f){for(var m=this._nRounds,g=a[b]^c[0],h=a[b+1]^c[1],k=a[b+2]^c[2],n=a[b+3]^c[3],p=4,r=1;r<m;r++)var q=d[g>>>24]^e[h>>>16&255]^j[k>>>8&255]^l[n&255]^c[p++],s=d[h>>>24]^e[k>>>16&255]^j[n>>>8&255]^l[g&255]^c[p++],t=
-d[k>>>24]^e[n>>>16&255]^j[g>>>8&255]^l[h&255]^c[p++],n=d[n>>>24]^e[g>>>16&255]^j[h>>>8&255]^l[k&255]^c[p++],g=q,h=s,k=t;q=(f[g>>>24]<<24|f[h>>>16&255]<<16|f[k>>>8&255]<<8|f[n&255])^c[p++];s=(f[h>>>24]<<24|f[k>>>16&255]<<16|f[n>>>8&255]<<8|f[g&255])^c[p++];t=(f[k>>>24]<<24|f[n>>>16&255]<<16|f[g>>>8&255]<<8|f[h&255])^c[p++];n=(f[n>>>24]<<24|f[g>>>16&255]<<16|f[h>>>8&255]<<8|f[k&255])^c[p++];a[b]=q;a[b+1]=s;a[b+2]=t;a[b+3]=n},keySize:8});u.AES=p._createHelper(d)})();
-    </script>
-    <script>
-/*
-CryptoJS v3.1.2
-code.google.com/p/crypto-js
-(c) 2009-2013 by Jeff Mott. All rights reserved.
-code.google.com/p/crypto-js/wiki/License
-*/
-var CryptoJS=CryptoJS||function(g,j){var e={},d=e.lib={},m=function(){},n=d.Base={extend:function(a){m.prototype=this;var c=new m;a&&c.mixIn(a);c.hasOwnProperty("init")||(c.init=function(){c.$super.init.apply(this,arguments)});c.init.prototype=c;c.$super=this;return c},create:function(){var a=this.extend();a.init.apply(a,arguments);return a},init:function(){},mixIn:function(a){for(var c in a)a.hasOwnProperty(c)&&(this[c]=a[c]);a.hasOwnProperty("toString")&&(this.toString=a.toString)},clone:function(){return this.init.prototype.extend(this)}},
-q=d.WordArray=n.extend({init:function(a,c){a=this.words=a||[];this.sigBytes=c!=j?c:4*a.length},toString:function(a){return(a||l).stringify(this)},concat:function(a){var c=this.words,p=a.words,f=this.sigBytes;a=a.sigBytes;this.clamp();if(f%4)for(var b=0;b<a;b++)c[f+b>>>2]|=(p[b>>>2]>>>24-8*(b%4)&255)<<24-8*((f+b)%4);else if(65535<p.length)for(b=0;b<a;b+=4)c[f+b>>>2]=p[b>>>2];else c.push.apply(c,p);this.sigBytes+=a;return this},clamp:function(){var a=this.words,c=this.sigBytes;a[c>>>2]&=4294967295<<
-32-8*(c%4);a.length=g.ceil(c/4)},clone:function(){var a=n.clone.call(this);a.words=this.words.slice(0);return a},random:function(a){for(var c=[],b=0;b<a;b+=4)c.push(4294967296*g.random()|0);return new q.init(c,a)}}),b=e.enc={},l=b.Hex={stringify:function(a){var c=a.words;a=a.sigBytes;for(var b=[],f=0;f<a;f++){var d=c[f>>>2]>>>24-8*(f%4)&255;b.push((d>>>4).toString(16));b.push((d&15).toString(16))}return b.join("")},parse:function(a){for(var c=a.length,b=[],f=0;f<c;f+=2)b[f>>>3]|=parseInt(a.substr(f,
-2),16)<<24-4*(f%8);return new q.init(b,c/2)}},k=b.Latin1={stringify:function(a){var c=a.words;a=a.sigBytes;for(var b=[],f=0;f<a;f++)b.push(String.fromCharCode(c[f>>>2]>>>24-8*(f%4)&255));return b.join("")},parse:function(a){for(var c=a.length,b=[],f=0;f<c;f++)b[f>>>2]|=(a.charCodeAt(f)&255)<<24-8*(f%4);return new q.init(b,c)}},h=b.Utf8={stringify:function(a){try{return decodeURIComponent(escape(k.stringify(a)))}catch(b){throw Error("Malformed UTF-8 data");}},parse:function(a){return k.parse(unescape(encodeURIComponent(a)))}},
-u=d.BufferedBlockAlgorithm=n.extend({reset:function(){this._data=new q.init;this._nDataBytes=0},_append:function(a){"string"==typeof a&&(a=h.parse(a));this._data.concat(a);this._nDataBytes+=a.sigBytes},_process:function(a){var b=this._data,d=b.words,f=b.sigBytes,l=this.blockSize,e=f/(4*l),e=a?g.ceil(e):g.max((e|0)-this._minBufferSize,0);a=e*l;f=g.min(4*a,f);if(a){for(var h=0;h<a;h+=l)this._doProcessBlock(d,h);h=d.splice(0,a);b.sigBytes-=f}return new q.init(h,f)},clone:function(){var a=n.clone.call(this);
-a._data=this._data.clone();return a},_minBufferSize:0});d.Hasher=u.extend({cfg:n.extend(),init:function(a){this.cfg=this.cfg.extend(a);this.reset()},reset:function(){u.reset.call(this);this._doReset()},update:function(a){this._append(a);this._process();return this},finalize:function(a){a&&this._append(a);return this._doFinalize()},blockSize:16,_createHelper:function(a){return function(b,d){return(new a.init(d)).finalize(b)}},_createHmacHelper:function(a){return function(b,d){return(new w.HMAC.init(a,
-d)).finalize(b)}}});var w=e.algo={};return e}(Math);
-(function(){var g=CryptoJS,j=g.lib,e=j.WordArray,d=j.Hasher,m=[],j=g.algo.SHA1=d.extend({_doReset:function(){this._hash=new e.init([1732584193,4023233417,2562383102,271733878,3285377520])},_doProcessBlock:function(d,e){for(var b=this._hash.words,l=b[0],k=b[1],h=b[2],g=b[3],j=b[4],a=0;80>a;a++){if(16>a)m[a]=d[e+a]|0;else{var c=m[a-3]^m[a-8]^m[a-14]^m[a-16];m[a]=c<<1|c>>>31}c=(l<<5|l>>>27)+j+m[a];c=20>a?c+((k&h|~k&g)+1518500249):40>a?c+((k^h^g)+1859775393):60>a?c+((k&h|k&g|h&g)-1894007588):c+((k^h^
-g)-899497514);j=g;g=h;h=k<<30|k>>>2;k=l;l=c}b[0]=b[0]+l|0;b[1]=b[1]+k|0;b[2]=b[2]+h|0;b[3]=b[3]+g|0;b[4]=b[4]+j|0},_doFinalize:function(){var d=this._data,e=d.words,b=8*this._nDataBytes,l=8*d.sigBytes;e[l>>>5]|=128<<24-l%32;e[(l+64>>>9<<4)+14]=Math.floor(b/4294967296);e[(l+64>>>9<<4)+15]=b;d.sigBytes=4*e.length;this._process();return this._hash},clone:function(){var e=d.clone.call(this);e._hash=this._hash.clone();return e}});g.SHA1=d._createHelper(j);g.HmacSHA1=d._createHmacHelper(j)})();
-(function(){var g=CryptoJS,j=g.enc.Utf8;g.algo.HMAC=g.lib.Base.extend({init:function(e,d){e=this._hasher=new e.init;"string"==typeof d&&(d=j.parse(d));var g=e.blockSize,n=4*g;d.sigBytes>n&&(d=e.finalize(d));d.clamp();for(var q=this._oKey=d.clone(),b=this._iKey=d.clone(),l=q.words,k=b.words,h=0;h<g;h++)l[h]^=1549556828,k[h]^=909522486;q.sigBytes=b.sigBytes=n;this.reset()},reset:function(){var e=this._hasher;e.reset();e.update(this._iKey)},update:function(e){this._hasher.update(e);return this},finalize:function(e){var d=
-this._hasher;e=d.finalize(e);d.reset();return d.finalize(this._oKey.clone().concat(e))}})})();
-(function(){var g=CryptoJS,j=g.lib,e=j.Base,d=j.WordArray,j=g.algo,m=j.HMAC,n=j.PBKDF2=e.extend({cfg:e.extend({keySize:4,hasher:j.SHA1,iterations:1}),init:function(d){this.cfg=this.cfg.extend(d)},compute:function(e,b){for(var g=this.cfg,k=m.create(g.hasher,e),h=d.create(),j=d.create([1]),n=h.words,a=j.words,c=g.keySize,g=g.iterations;n.length<c;){var p=k.update(b).finalize(j);k.reset();for(var f=p.words,v=f.length,s=p,t=1;t<g;t++){s=k.finalize(s);k.reset();for(var x=s.words,r=0;r<v;r++)f[r]^=x[r]}h.concat(p);
-a[0]++}h.sigBytes=4*c;return h}});g.PBKDF2=function(d,b,e){return n.create(e).compute(d,b)}})();
-    </script>
-    <script>
-        /*! srcdoc-polyfill - v0.1.1 - 2013-03-01
-        * http://github.com/jugglinmike/srcdoc-polyfill/
-        * Copyright (c) 2013 Mike Pennisi; Licensed MIT */
-        (function( window, document, undefined ) {
-	
-	        var idx, iframes;
-	        var _srcDoc = window.srcDoc;
-	        var isCompliant = !!("srcdoc" in document.createElement("iframe"));
-	        var implementations = {
-		        compliant: function( iframe, content ) {
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/master/05-Drafting.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/master/05-Drafting.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
 
-			        if (content) {
-				        iframe.setAttribute("srcdoc", content);
-			        }
-		        },
-		        legacy: function( iframe, content ) {
+</body>
 
-			        var jsUrl;
-
-			        if (!iframe || !iframe.getAttribute) {
-				        return;
-			        }
-
-			        if (!content) {
-				        content = iframe.getAttribute("srcdoc");
-			        } else {
-				        iframe.setAttribute("srcdoc", content);
-			        }
-
-			        if (content) {
-				        // The value returned by a script-targeted URL will be used as
-				        // the iFrame's content. Create such a URL which returns the
-				        // iFrame element's `srcdoc` attribute.
-				        jsUrl = "javascript: window.frameElement.getAttribute('srcdoc');";
-
-				        iframe.setAttribute("src", jsUrl);
-
-				        // Explicitly set the iFrame's window.location for
-				        // compatability with IE9, which does not react to changes in
-				        // the `src` attribute when it is a `javascript:` URL, for
-				        // some reason
-				        if (iframe.contentWindow) {
-					        iframe.contentWindow.location = jsUrl;
-				        }
-			        }
-		        }
-	        };
-	        var srcDoc = window.srcDoc = {
-		        // Assume the best
-		        set: implementations.compliant,
-		        noConflict: function() {
-			        window.srcDoc = _srcDoc;
-			        return srcDoc;
-		        }
-	        };
-
-	        // If the browser supports srcdoc, no shimming is necessary
-	        if (isCompliant) {
-		        return;
-	        }
-
-	        srcDoc.set = implementations.legacy;
-
-	        // Automatically shim any iframes already present in the document
-	        iframes = document.getElementsByTagName("iframe");
-	        idx = iframes.length;
-
-	        while (idx--) {
-		        srcDoc.set( iframes[idx] );
-	        }
-
-        }( this, this.document ));
-    </script>
-    <script>
-        var pl = {"salt":"cKjndpu1wtVm3fMbeKOFC0p17KgpBCQ3rQV3nAM7hQ4=","iv":"h9CsU1Am4anTIDwJ4CFOxg==","data":"l+2MKFL2eKD4ypynFzI9NdCn+ifniAk33m5ipRYWXQujcR+ZNndCVdPuRpwzScDDQJEfcgWmPGQXoozPftC8kKc/LqtevJYGWES2lMOCDecTcpx+kQt8m+wFQEjkGjR2uGpWXkltSTrhC/+qrXCwi8ISVE1176pGMz1vqbjbQ5OHse9DzgJ6Nnw6d78mxJ+yHtEdfpGWwOESw6xEZbrpPznz2H9sKhoZBaVCqLbIpQdw/6ODtlIZ9+DTfm1AGjxfOXjYmvtHAA3ka6PaLcsWVWix7/MMk05Q18Ucy8mlnYwo//vOEbjO3A2E9loyxtTGZqS7ZeaKfIUwCaM3HzXPO2BvF6EnQaf3+YBuuu4Xv0aAl15bnzGmwEqPp7cTU940NRzhIDRY6njNsjJRaqrh56Inv4LtE8LiWfa1I7pnOpv32B1+Rp9ZyhyNqPI0LTU9kVXe7Ifi3oTRZm+BHftB4gHjdljBox+h7VYSDgGrbT2dYjZC/k8TUbai8BOToTqBa0F2Nn4FZIXeAbUvpL1zRd5rJwsLQJeT58u//Ma5OhZ1lgjY4uHkWZQUXeeyXYV0/iQQsa4zUtDN9F1oH2eYDPbQGJLdvGrYkbwYxE8AvepknEKNlFkT9W8jWXUFdyen4d9UTwZZu/Yzf4iQ/sNlWdb1VaN3z2xLhk/5Jp7DRQZCP5piVsBLmQIBR+IDhvG+uBeK+9hZ/P/4VD9R0L30URb09mAAKYyP6MaHhFffYB58OF5zezSzILhNh0frMAueEE3VlgNdYb4RVwsn/a7ShXhsA9KDY6gbURjpWJS1ybhH/0bSLywYBcRvDzEIm6mqjsgZLAgwrnmIvTBbam3/rUd1Ujcva1rTwGmFwoltRKf3X0tDuVdJzPyFJ8UomAvNdVS8ARBb0Z2TvR73Bq2czry+WRzEhDoDcA2oq+DbjXDZbKB1NRui8KsjBwk3W+HCuVJ9enADPVkRyFdFp+QPPvyjo8jBD9IqX1pK97sC19RRUkLmUBzW8EA02hoQf8Xsea/Abji+unOMQjg1DK931XCftvbL8DTD+lzcx/P8mm8Z/52vDvP+sAMYTZgmKlPgEOcNBKFDkUmy/9Q2st6FKH8OVJJ00Kq0Sb/RCDI1F+kTt6gbCpRrJJdzMkwQrLOkWKiKSjmj3WBmjX7YzuwnNyTPg2JVaI++Ik+tXT6PsxSBDRDfRZmZrqLisBZFkerJ+SLuP5w1Xx78Kiw2VI1eBJcTthzCS8Wi5/L+/vQNknZpSZSYJUaPXyKEco48H4sDa+sdBn5wz4p6LQ1a7dFBwjk4pVQnayx/qYh1y4FDVmmPo4Cl/3q0FwYLDMdQCtNnuHwJIs4MHBn7v/QWCnp3JQtQXAUNtd4xKq/Mv0S21bubLfCxJHkfzohw3NV9DBq3cU5waVQY9QswUln3HuJpt4JJbVeYcgc6fuAMMafOgfJ1bnAhOpgKPHmnE0duKQq1ZZzJB24UfjL9x7GGfT5mNHvNR04O16zaASENGXyU9yZDvoD0oK0gBBeVxphbaEOBMF45AUXDj3hpKMHOwPl9HMmR+dH0grFbRch7QyJtDwKle6AXkWTjDa8DKurCmvmEKlM1pAtqmsK+UZ2oyBhjzwl+4Vy/SI0XvcSKnqfOAR5eAYZNGBmUycxrqk9IpWdqp+7kmA7gZ6x3F6pdIjw8g0ewlA9h3fKrKblt3g0Z4mtjcDX3zy3mbpHrk+XnKJQbbVRo6FxnMuvKuFNXg0qimsRi7u3nF5Av4F0nRmoZt0R6mgdbDQQaB52OlHmn8ydo7NVrlVd9+kOKAwbyQPUIPbw3jr4nVgBkTIRulr9gnQyHi3xjCH+z1og2Ro3PfS9f+PgrN9UjUvLIIUCKb1OGG/wHYX4j9WTa1uzGMFZ7cM8DoyiwItY53eAVUqJ0ePEnBsQHwUjxUtHVj5xcdB3Y4ua4GUdK85+0LpMQkRvM5UrZ3vo7cb4I98wBQixst45eTJRiE92IKlOz4rnOd4FwqhXsi20JUc2/NYS5VWuaTxs/82WZyGZYj23ehNRj+q+AR7y0XyZeS8IMRDb+ynEf7jImsB9U/lxqapxXhKB+8Yq1GBkLFAU4RmDLagW1yUkk1Dx6BSGh/PEUH0P9ZLk20DVwLhWvwwwd3CB1gxVQWFCIV2hbW4qI7WfQEaMjGuBPZ3ejek0QZA+koCvVximabUHEarLe1rfmbsMn4GvNy6bfBuSHobhl1ggMfP/aHGTaIFKgZmag4oBMnbJDP+RwoyA3AHi+0bSDgAZ4gWp0eogw8UfboCw7NjConoK4m9CmnK9+c7Cyp9tn7XX9chajSeVOWejIuJWE2+YR6u8KSXFE3RbEv+cc7ecmZU2ybyVeZ3Ls8qQhx3qw9w6sjN3hPuoojuSrfQxBBQokeUsssd3aker0kkAutUnLGZR12lVrErxy4kfYmolv6V8kXWb23ircVawIlrdxRfTXwAXeNRWPmm8TvAOj9Eb7TTFhULdeiOu3jgN+ZElV63nzWIImEz5rS1XrGY1PnR/U6BUuxgsGduvt2XxTwe5FLiQNdKgOuo71eMhEbbv1XGKLKwNHdnBuBaRD1P6igIHSsWxvrPqndzDBeKq2Odql8fiHCMwH3162G8mo0Cyd4CfDwfodq4petKY2Zowb3sswJhVNTg0ObNSzLbdbRwVYWXrvYfONq/m6uLGejHl+Tb0HLQqeN2YcHdPOxLH9n1RZ2viMwpFGfRSh3zxxKulkLh+a8CdEhDFz2RbzMDHedHk6z3quc+uMTx1msVhmX04xKVL0nTZUBa5hMwmwet9jdiFnYFw5UAiSxW+QU7ed5wMPOhnEAm2Wsc5IM5Y4UBk1HkiJsf6+x5y3csvCj46VvlP/TsagQT9fDJZxRcz1HjzpMKc5n1cXJWtjGeL2FizRQGoNt88bpazV8UZRi7G8nIGFL/eufW87Ewxx9uhy172nhq45ZD89PjfWkuo1Z3G/gRrAsQxk1lgQ+P8K6uPhFqEKfsOagvshwq/W/ezYtjMBfY6DEbNoWGaYBZ6oZTbWfHnm3Occ43pjuZlicQIXn/2Wy9cHwJhpPLG6gEBblnwB5guFmQJYxMi/DClUEfZekG5ZAdIgvzpGfEy2JIjrs8SsjM8n6KpFMJ0/j5gIEBS3MzYey9C+twiT1s9xn6AF5M3OpGLwkqki9z+vYZ//gmAY93VdZwNN4m6cOQV/9kZVNU45uSkgkVR5EHHwHzzi8VcKvqxKmuokbz1NB12StWAsh+xkPzFljVefg1saiFNaWSPVhBiu4pTWhzigR47/YKBqxXtoCcqW11v3UuWsYx8lhGmqIXip3tzwX1NpnrSsFsBQ8li+yz9sFuE85g4ig3efl7RFhDVmYQCUDlVeNQKSO/3VG8/uUF2TtKoMms+EbONhtjR8HrrZrp058a30UKgTDhj9eWabHF0NesKEQg6U0IcTQ8+IN84AX3jt4QXw3iF0ZEp1o3HsYv5HJnVXIh0qA0+YdpE/xuIJiMEFhqm33g0UMi3YpAvK+LLE0DZJKSYSU1lGVO5zr9Gaj2yjbMZZnjmHB7vPRcFgynQ+QqCOMGoPJLkRzhnBpbmPYCBuGrVUHPtUSjW+fPWUp9x/HcG4ttsyluAggkwWfCPz9SPwMctWLBNDHH0zG6TsfZHg1Hq3dhniwaQooENG/L586i993LELhJ1a1WmBFd8AOoK2dM0MKQthdQzezVYmFoiXEaASR93UoGD+uEYPIMp4RrvWh3hdOc7EhO+pWS68z3zR8JW09XyDMqAJpAfCvC/xS3DIsLlfW9hVM3E4NyTQdWvrjCcpex41txBykK/i52ven2JPK9PzeKVbZYlEXTCblzTFr+eXDyMsHOdukRz07Kox4MaZgK741pzDBbIC8nPhYubYQ3Fa77iQu2Gq+O2wy+qGOMtVMm3fvwL330+7MWSrLcQSf7fwbmroX5dqIjGweO6qT2wQyL9gqgiSp2c5xr7Q8W8474f9qZHx7jaL9hLkgJCCNKvlwklt9w2bN4o7NVY0DMVYqmXTGI5ybxuNm568RN7hgAm80C1noFWnCPl6Uis7A1WLq44Yg4QfdisdtXVebKxgDA8cuLOT63ROXYCl7d6JeKM2iSRIPCevQffIXpEGuXAi/VZf4nWourum5RhAdvgRTuTnjOWWFn/thSGe5dyRt+s6aUW8GHDy0mdvcq4PCIgS3csKTkRNAzoGfzrRR059mmLIR9WV6/woZwHE3Es8XUieV49EBgZwy4RZ18PmH/Gj7w1zV1R0GzCoeXmlDJ+I6d+MREkBAURduxUZ9pOoRFTm24j0yxUpFWwMQE9vIo6h/d9LYp183njfhkqH12I7KQ3jySJ29I89V4pj6fXlvZyGtNRGPLPRf6TVCG3YyVHakgbYGA1niMKF8wGbPT5wRmQiQ43eTq6atcxNsSP28GZvN+bVHVIszXO9STWivn/88eOSoYFUvVe0A9RbjrzQ6KDLgbTDd6c0On9rnt13uTlnyP1eMyTyHOMSvw9DTUF0r+Sdypam9W6wykcKbIUMg1A6ftxkosCzyTSOMXLMl/ubXJ86zQVOpTQ48byxOszuQuVWUlhnN9f1x8mzHHy/TguQkSuTBtFbbUDiEKkdLOLlVb7AUYZTmuZHIT/I3l420LV6K5E2qXb0faCHhl3JxA7zMHQoDV8WdhckzvoPfGeqbrDHPzW7UpfE2bBToKCW+TGipkAC/dM7LEjomN3DooEBVgWn48z5T6c/2QhqFacExfzDrq/QhoW4GsQ8LOryLDBtxAc60gni5AkvziN36ZuObbyM2Az1pVN0AxGguuj2qeXWfOKOB4MxhBGouUsFgiaN8U6/dwx9uIX4vr27WsDk3VGksNvBw/L9Wr8GMUx35BvCadQy/4uypa21vVPRpJDRtveSVuHJ6DVx9n7DpbV3ypu2ExgTGabg8/hrtbMUp6RAfAth2qDe77yGxXLwAB3mhuvhg5mqjX9PP0ktrKKuqPaTQ58wem0n+n7BhVQhOjp4P4zYDV7YvzSZNqvh/SVsrH6NYXUyp7hLtTCJfX5oKXQXQNRNSbcn7Lup0lHI9MpDnReO1CSFGJLB6eOKMq+OgHbWvmek8WmvWA7J8a74f/nNwkK+fl5ZknzMpqiDvDLlzbtkFylXW+rzdZwyGZTfkGlPlFNi/o7ZGcz6TdZMvU5wNIhGX5zzW3dg9HSWULOO8rjRKr13gc9+16m9jK6muI92GZhy9VgEabm0HvvJ/ltEvsug+XRPLixi8oBc3HXI+aEwx18t0rJhi36XKvukq2tCEb1X/KEivPelCEbp4foewR52TMFwDKA4WSsP7ofcW28f3TaOB7uS7JWkLsXHMBnrK2OIZF/DkdpSzr7osVmR/sbSjcw20T1FgP7PbxF6R6+IVBI5ROJ9Eol0bG8YY/bSDZFs2BBNOBY27INQVJpa+kRBPNRo2YTOJJCwf75AqrDQxLn1uj3gAeYeDYzc+MzM1FwoZS1EF3DDS/7dkGoqvapQC4xkHTDQeroVb8x6w8cp5vw6Ct46N9jMghGW1mBD3QzCosoWsk1onvaJXNppegSn613AgwLY4AzkXR707TsMwQJQZpFDFm3x4SeLcFnd/i8qRjCuOYMjK8b0ZbqSHgXf2Bp7P6BB1oAIBtNO0+j+AcooOekaScpQa6QnCX4+JxeOWkHh+rG/c63/B3G0TPzdHHafTKXHVblQcG6L+zt5tcofOWY2WMAxLMBvtTtxoesNxhRG+Sd6sDTvRAXDZ932bjc2RLaxWBwsvEc9FrRSQzRkKDWFpuVMPsjet8jGCmjGXtxXnoUfz/IzlNI2OWrxANz84iYbyjLyzZF7E8uYMUsaBY49+09mT8w8gHWLrdQNTnfKvBSwXIyLn3lQtINo8CpSGAASF3LKvqGniCfmS//xOSgT8NgkjDNzokQONl8cUxJUufpHobPWnhl1Xrc51xhtT9DwLckOJMBU90qz7uFNFYqDqKn4fkJ1il541RgZ92ZKQ0/87WAMn2GsQgFjZ3LGi1bImribXUWcAXcz8v9mwzPhKFoTPLkW7Ihupz5zxDUkxLFvEYeXCEXcUu86x8X9yqEG20dK6W/TlJEkE/oUMI0SeVuht1UMZEhEJw+VNVhImuBAOT1KhQ8cGV3BpaY3j9WxNUG/0Wgt35ih4zMkgiy1HZlmQNjEQRmWbeKA8wOJaKJVi/Qteox5lwNwBNsD2hPxj+LR1N5MMNaBCz/XTe6IA8jjz1ElvyZmiQjmvdGF3t4P+PAjC9k8LFBFTeLjqwNzcOIoGtk6u5EtQxtXcs6FnHQm7wgsyClnZddiFATNnAgDo+l1UvQnIPBQ71/NMan3Hx40d2KYxhLRzo2wiuVulhxnDsDj/9U9qNVSWFezeEI+4gvnKs9BFpOPuRJYEVLcbUkGsPpgxGWYHznaJgXjyCajUpyY8t2QVfdL6MvVF+5fF1b2cRFH7p/s+8oxoAWYXZ4vn10G7kkg17+x2d56QNjKzYrwfv3AvFaG1oFQrhbexq/Hri+Gmec+cau0SgkHwon/zMo615ewGFvde1+Pv2sToGJSkQ2Xn2Qo1TBiIna5ZJojgJd7nmRsqgfGnWPJpkAQ2hs3jpPSgxJnPHNrNyq8k59XV71SLXBMPHz6N4HoYYT0ioz8OsJFU7hR++guz5kgwd68Js1ptt+hYDI4Y0WxYuSfOBOtWTD1t6lLm9sDK20qVa8OWtXoTylfETr2j0ZGLxYlawrPTu+c5J3uvS51bKetlLW+oV26BfaE4r+aHOUQon3qzs46gCLlqUM7XTYCPOiB20pZsHt+ASDcGdeCdPOSd7nPSTU6MUa2vd3sEyOs4qSqOZ9Xkw8oL8Pk8OpCfxtN9XQlR6+dHPchafx6f+x1/GtCHCwe0CSlFYVMLENDq8zd6PI+3w6KyhJeyLU9jLQCZiejfGgLeugxwPfp92BDrDzJy9XIoYGGN7mBVNFCCX9GKSsMCdMaOttc6KWH5skjxlJ4QZbKylUlgHWDFwuiiMqiwSX4piKUiyme75s7C4AmDP2yf6j84plg4WNdyVctVQeqc7siG2RbxD1NBBAyw/3VQMbVksdq6P87kN5CtZqFCvAJYGDzSiLi2kqOORsvJVbEKsL6pVDl9p1jBWAVrGMhJI/URG+p4mVSdi1uUffXWklWnoQVvp0UasvW1JNMThVbp32wpLfRt+CffM6glUrirnL9rV3ylqoDV8axWm7SQe+uN51hEkCP8tZrElNRnTeeLiEWvSbm5tH0ayOofwimTKGtiYcTnudEceyamqJRgQUr4w59JguQI8tTUfAWJQhb7Ad6oYHIgAZdFMwgvVmKxsr1ZnYXmvFSz4GCXGlrKWgWxltYURMA7U/F1smZaIQ8hAQO76CbJjRkIKGZrvmO5oLqqjuZASEg7Y14vadovz4AUAcZvKaSfsnbfAafjFoWC6ittX6kSgClHOQ1pcxYvN5hcqM4JG8K+agWN2/mSnl4y/uz1u0n2h3JUt/OeeYFCBKz8K5w6aCNsYLa+FbWf/g78bJ5Fjx6Owf7W4bDP/wCzrIgxbihGavsiELS+UXmBCoNaXpwLtZ0teyylBiiRKB//Q5wrBNJ1Zc2VTnsJ7Fd/j5YZFAG7GwJOss8Ae+XksY8RVDK0khAXOpXwgCn0QundDNgrIgmMM6UtTAgIHZvN617xTAi/FUzM/9bgWI1t9MJZOLx4QpUa4krc27MlTjMLkgmRt353/eVfZeZVpI40z/UFB0CrBh8qP4pwD1hpWVOrklzckCtcOdVzMugCIaySIrGkc/YfxVQCjrxJJIoibRESlZ+FWy/Jbn7/b5Lmop0aEQV9hgRXe9CkGGfyLCdO/OTo7rc8Z0Wm3kSQm5Ep99H73YqE5aOtZ834K2P2SKyXx6+pgl2uhCjmzp55gDwACk4cp2Fnrb+xUMk1bGBHZR+mjd8BZncf73Lc2G0PGBHr4duBeOyKayHHC2lBkHKb6Yqx7NxkIqZaX7SFvo30/SkMY1Dnu3lLZl8RxMP2KUe6hL9WWqy3CygSgfW9aRTnYuVdLKDOkh78xm2ubrddCuW0f07qN2cjT+Ts6qM3JDDuWtrhjm+RtrUTj2M6/sLz9HfWZ/8eVlhrNxKQjle5Uc9nT01+XSIpe8bVFnyzEllbHAQr2GlaXMk4b1ANJaWotK53+ERL7Et4g7HhObQSsHO/ucA/KkPVms41lcyQDOLmnt/Em6ZDvS1EOnvQVJZX7/jbbygI9KQJmrx72EVgZmIP6wZc/TrDighvO6MNYpVki3xGvSZRO5Boo+ZomC36bTNlq8zijDNi/WKgGsDbLWaahLenDJNkN27UyvzVmiCVSThVatQJozv5OI/ajcCJJRTWGHy21K1CzGmcnc+Hfq+X4vTc1NWG6ZNxTJxh6zRDambSq6lA013gOgwFnneVIJzPfZ1EFvWWQ3Tv+8Qi/gsyBnlLDy6b1K6Pn9EApeMeZStFlsD6r4nXNEUhnz5c7ROOzWQmmeJBncisFisJ28ZG4g13qJx/SPsTKdoaSngFxAmRsCaIAdF3RMIqO/K9ZUqLRLb94sRoLyuvH7Z0bZo3XQad3ly3av61gKCqAcjpRE3lKqbb/+jOmfonyMwhwCarzg13CdfPAZVterEYloxUlhN9aibZNHoNdvyBvEtYHTisoKbzoOhuN/WmCdLmyurSEwR7cXHxFsVE0MSTVttkakBFzMWx2l99o4XNY0mC6RpI1wNqsGMFbw7EMKJszyIJYEP4w2BCtVB4LGXVvSHd1y5TfgxTdHSvLXwJcXJT76oTwgUxF8qH0vJpqEMXvQs4YpcdAHEtuVO4CziDRmyQtwohAAUlY/7HqDt0BrHwtCk88mWS9YFcby02zHcys8EObSFBq30Nzlx7NmRL6PFSQT84SDhro6VfQKXaqNTZ8zOHh60JRZweew2srFRDup2HZ/zLjhbWTbXuRNpp/lqexc5IQfBUVAx3dWw9IFn6+pZlyDVeaixfPEc5FMfWobmmwSxaWGEYm14N86SDjREhrMvesv/XKo2asr+6MteGTZDets85hbQ8S7ECWOxyzfTojTB1rV7PKYcnUarNiCZzEi2zU5LiOhFda/Ltk9nLgSv2E9qCasouIYqoU9kP2kpH2ddvBBPXG/72ZTua7RdgBU6I1V//sMwWXZtMtYuxZU7WP1FooIDo7ZvAfjq5pZwqE0c7r7EunSh4aks15UycRFsyvhwThGK3eD+M3UBXgkUHaMTQzizWyvDNadNTrQbYPNv/0HKf5lsUZfiHrBnfKgoGwlXChEFP8cU7OipO0KWcrQDsw2jDJII7f3UYQFvMJUTA658IuJ1BZaDrjOcn8bp6bO1TvQebDcJf8hONYcFliyObPcDLgiB7n8U4SDcn7hHKwfFFVt+CGXQ3zQ5pSSC6zL8LEsVbV8f4Xbd7TTFxlGnTX+bpNnvUy00z4ugXup20U0OSbIqZjEsc6gM4w6rNo4d/SDOc+TfcRO9ZV1VQzPUy2XFvFt3ffw8A6wa34KAghlM4EcI4vj/eEzIdc9X4xHAyedsCiS8r1ff9SibsZbCs/JVF9ojDgP8hzVrAgcX3anGWiVBxNuEj9jNLQmSUJaThnTlhnIu0ZOohm7deiiNvSonH0PCjVmgql252mahsiUu1y9lh46CFfwhM85WxkUawyYPXcO8xty/0rtN9g/qs7Oe5GOZyzxCmaAi6o43aTqN/BYzxSZtjV58DShnPBe+iH37Gb5UMBmzi6enn8+4Z60zpVPOPNPGwQeu3+OVQz8pLwfuEa/Up9ATEjV52i7lEmGx9hvB+bXE+B1tTgBmjv2XVsYhwLJSp49LOsszqnwHCYX9yhliR94Qju87xKY3XWKN7VycuVFRW1YrZguW7CIsdcMQfcXOUuH/x4Js4RoBZpQN7tPhtQrlYaEBQ8aEdLa/hAYwXXQUdiX7Htq72tG15AqMoHG7aKp56iNFp2oWmT2Aexvrl4/VVSzdZN49KkwjL4C8GZ6576hMFu7mwwP+M3gtjz2YtuzmGg94GD+h3JxpTRUiqw7mN6EttVBrrQFXarh7FM9BAo8XCH6Yv/EG03k89+FDBW9rC0NeatEHMDkkw7mPX1eMcbOU1AVDYvSNf8iu8JGMZoHGH5Y3MzRR3xME8D2zjcTEzGE+bWq7EvTzfmpyUkTJj1MdIgHc43jkfcVJkXDJbceV0AL9q4UopL7iYFC/Ocu8RA8l1bQIrXkjRjw8omTjIsBKClfbqvBG3hKXRXKgS5jMvHXbl2jIOLrzLwVQ7HjgRt6uO0mGAbNBO8vy0jUsXSvU4S5lX17mCMtu0FgDR0KYr/IdY5ATWV17hATAVAdJXO+IEKVH7Y0Og+LJ3QhaLrSLksr+mMOiZcrJ0Nm1D3gnMQjz6oiQ94nliBLmFN3y3F8n+db/7CV3oZBrg+dN1WxofD225S3wgmEW2GJ0yBrnfXMCvkBNwxhUZa2OYQ9/0S1NBjgCTU/UTJaV/Dw4NI79S+c7MggF7XW4CR9kGhozqvxncDsETQZlrKcnAm1vTDP+faFu84cIDe1Y5oteOH9JoJRxJ1e692eufWC8rMmNt+hOrQrD5llE1ThW/+fCdiPz14Aoyw8dN5cKm4RNfCAXBqBkcis/DDpXdb0tdzogQIErWsLHXqMZ+1CkRqyxtZxKgKPNPiTs4BIemvANsDjALFx6zssfNq9d4E7w2FPfJ7hvyA3cHbc2xf6Wfo+4qkTiZNP1cKf9dD4JAFmZA/Og/bWV9EbMojrUB6/whtjRxHaiS5xjaLb4i+LvdGz4uRaXlH9Ix5DLWh6Gm2zqT8a4MoRBIERhmwhY9LpUUYy+N6SF+8qSdArYtGvkA0qB9LIo1LrkxRiB6vYW1H9xarvAJzOCvGLC6EUaH6y9PccAr5cGVHsTyAicDVtHbOQyDL+k9wnqY8213M7YUtua/ElzWjyUHsehv8445Dj0NljSbpYcf4vm9VV6d5x3C05ES2tHBvJJ4pYuMyFc14AYpT0hj9z2PahSZoRpGs04/meH/m9POLOrEJ559um3E5ACNbfp4P78Jtgz07B4xjNihjYS6PpDUb3X8SRv3iGp5eVeamiQbtYfCOF92gSMVRZG2MCPyH6KCkiyEuvHaby+mkEAAQTVLVgmg8685aQ4aqvbCn9cLtlsQhpu/gauUK+pcZ0zoWLCfC5KZjX68Jyk3jTf7lmPFtvcf+anEEYsz2cTR38/Lry7R4D6aX23dw7vrEVFujvJYbSuT5EmZNnTmQX6U6LjuWLtStMrFgHalKSApODwiF0X1dDryhWXn8GiglSzcwA3EbyWaBOvTLKy4OQ8wnwkHdb7I0JfJjTmfEPSvcUZwVnzzyKafcuTG2iF6dfubrz+Mr7aO0fH5X+7XINyULHTGTIs55AxNyy3YhhvVabDSPEFi8Ijxac293gGuR56l+Otx4BMqFwZr2Jg1evSAtCU6UlZo8nYdi2hYSdS50uZNafP4TImbz7w58hqslBoeq48rUctWIBQ/MGBJB4mN9BbYKTcOvg3R5GzzTl0vJUY8tM64yPLtcm6x1hJz5Auy5pjCtftTQEf4dib+uZrxv+0GTyXT5Q0X2HPYMIiMkheza5tHJ9ZPngWDOmvWYfpSZB4UqmR4CT2Aw80+EXcXBmGvqOVdpKP5W501zjwJOFYt4aEygSAXZWd2nJf2+o2F0Z87tcs37tX0aiJWoqIU0YrogQIEN+YeZUhnxna/y25+3SD9g9fD12zPE2E34Cr07F6uQi9il5Jr+MqaVg3GBgl5/dq+9eQLzfqBW8q7Fv3vkMxX5Dxvt6uxJ1ZVrdgnjY5fTgmSLahGY2MPCii8YOVJyUVDFZNGjldZ9IlMy9k18u1E/3otrpq3u+s4M09PxzNyLL9o47dynb1Jh/rhYlLvBQBtd5SDxnprgBcLbj99HU6Lnb+N4nvhC9EX5KfyL0jeQf+5Uuq1nBruux/MCy8vEFD64a80YPT4etEHKjqzOnyc0brltLUWlDoQzeh8vtvaF7abDt3o3kTEzSCgFt9Z21tks4C+ubpcYplUYcCYZaT7ZZ8MeVhU2XFInw3nG71fomcunQcjDXMv/xsk1941j7oeJymJDBVw1cGpp7Dy06sbNYBkU1g3z7NzKSVh02NOIK9HzsAebLZi9oH2+LKc8/ictl7YqNMWPa+TsvFTNMssmD8+Nwr2Iczrzztz+yFE97NU1VVoVoCCaU/ZfXumOvmuvM2lDNPNNtJZxpLtx/q+IViwbg6gYyScw4SfuV0qdU2btgBM8fZAPbUp6pAZx3ztNPqMH1Da4bDIL5B6n0eatSOsVJIehWsQon06AXMVvyivtSzrAsVUge7+k6KRh4pMWGLX5AcEK+dRzGzAkePvYZWujt9PFOJqziDcSQ9vY/bgeuVlCnP3lTZOEAFDpVf2w3NwpmLCJxaf+cyuegOKLSWNQ4Dq5G7j4LW8UyUrmpkylI9oTmhOm9AvRI0FLBB+eCRmEXlmn9hOE1Kw2mXf6VPvvMoJ1sq+BGx0ePe2xpNu2Si7iyVanEVAsadq2yG5v3NGW0yb3TwjzJEIop+vU7Ya61bsNYCyMnjX+hcZLpiA+jN9gj2BynzsUayj7e6hYlk3/HRVBuiP9u/MpOeZ0ynqsQa+H8RUJ/x2n/8vdY3jRP4vtpyaqfYyqOs+9SX5h/6TPrdIa3iwY1ReEu52sM5BnJfmSq5kLOclT9twEvFxSu1FLuv5z3O/zZPdiEXuybnN0ZNKJrM2BLwoXulz1DVFtcwZCBtjAqSW+00pZbgOw3aEviBRsFXvMDKxdKMm9DwdEUZNt+QZiZo0HTlM98wv5hArzL48qjonexWUV/tvkK1mT67L5XGZvoi2QBF8c7uWrMHXtCaJ4KOINMoAs96asXiGmYf5BlQ3oN1btoK2kKHmv9JDaqVrnLZ3LVE6dTcTX2v8ZE+dvHG5PmqdZ3/WnUUJCAs91glmCoaomdxZ+qBFou0N+xscWWGTBbidnKNlPhEDwwHpYPHLqEnu9kuPvXxa1GRWK58nttxy+x6TvlkFhPmn/lriHbfsO3rUVypaDe5TZIT7B01AOWkI5o52bgHMNxmmr1BooxE5kSF2sgRQbQ9IlMM3cpWroWRLXh6jwSplVIAhuDBKS1pEnJwy29Y9Mqyv/kNyy6rN1IdbKKan01jBj6Fe9363epRBNbBTgPI+axqFuM9cqYDuY/e2cdr3/PZq7DeYv37XcOwrrBoRfD+Hd6COYjjWq6x07DPb6r2WpCTOWhwYTKEMsUPDYCa5CH8KDgomAAS4UeSFwRcftAg0wFRSo2zRm90yLU331p4wRF+Jl4wBLcDSXf2DqNESJ8GuK6HWoVDktSlOJj/7ZG+yaSBuB88nGxH713RejYi6uRJaiElEsJZfuVvFCBlcgtvMhS5DYraoJvEptCyYVrNNx6La4z60H/CKrCvdpgzq8VaN/yXZuoRY0tkC1PmoDJ/PYLyvyYcHg/SgKSKFrgm07Whbm8FGBe+2B7ur+QEmVPGkxiXLmEl+GelfT2HFkSBYfUHN2xbZ2KgMNDVE2IqPpCMdHtIfSvjYm/L7LwvM4s/qhfz/sAF6RC4KUJ54FN+z3IREdf0AuMndEJmeFzY++g/0IXixl6WPgq6+l3Qp8rMU/Xlpiy7M03+CwY7yHp6OyYPwqd4embWPUZSWz4dr+JCrh795CwTppKmtfxwI0LUXVgp6siguOcUNSDq0JlMnypGdHZFUfnGhI5C5PlpsYBLSnfLzgKvsjYWjjIJx+YTw5qGEeZ5u2e/5eWpwjoA3cZ1ohT/RARJJhLIhyDpQYm20opHyA7iZ4V8dmx2pXdNqfoPvihaER1/Ibc8kP4OG2hXh9YM9S3AcL4WvPVH2cwdA4w/bqoOxuIafW+EZKBTkt1YEq+A19uJBn6CJYPNjv8n6AFfucA2c0pSl8aNUHtkzjMT+a05i0WjHPDGwQiRQL8MIcRHuZKQxHn85obn5T3mEGNMYRzeighwm+Q4hGkJYLchiqgr9SDxZvb77QI2btcJGsZK1LJ+Tghd+xqd4IN2ScHGz5pxLcOa+8Leb1+5QNRylS9uzX+l18dQxgXjVXz/97HMFhgXRpAXCxrM6O1EcmH/aRqjnwCfZ9sMzZ2aTMUD0M6lHyxrl9MmfknWXZ11LSfvJclNEl18KqGun9UKNiAoUMndz0lNVrImjdHALLnw1BZSH3PLS5+nMR3zjeewi64ZTz2YaG8T2xZCRsgf/T4cR5ZE4GusRoTOJbpajuY6xva3kHkjau3/P6UCVXp2jmxo/SMocDErwmygpBlD6gt3iDsu+Lh1qn0TQ0C0JS/7HTVg/ATImmnNjEJ3gQYN5pwwBdlrNf/wBwdh1tMsEn851tmXjwKePLF1jrBqxAuieXPiEDpjMy99U5UO+H6wDxvGxkz7Exb8VjKeLVGBzqgPeb40p2hL35gMKsEb10gyXgr2w+EKBxUWtN8Wo9EnvzVZ/GSMrZUX58IINLN2KPE25vEmB4HADPduLeMFMo3KUXN5hDlumfmE01G8RM9nCguailsltOwxVZ8hs5AK2QKL93rRQ+7zER31ScKyNIQ9Tll7VyUTK0SeXTC7qVIleflDJgDm9ytGdmD/NlMf/n1Yg0spuS7e0fwpz00xP9s7GqvKnxJOpRprWgwkD40tkLc7PvQl+Hwzbr0LcT+DzpgFfiq+FIfaU034BIwSu0M/MmgBaPUwns4XSMCFWxDUH4Ta7lw8cCb0AySB19J13dGd0ssfb8666Q+R+qYF25OZSpty5c4yM063P6Oq92QIX03RpT0Cxw+YtxLCYkP0QfNSR0zNmKrCxoRlheEmbhjOqTECTHr4ysvKMnQRQs7HulOe0om6dgTevUlUGBWqA70h6t/ttLqChVrmpDPRSNW001FTmRf13P+/pWkR7sisUiWuZaouQ5zPfMEg7CfCJhwRLt8oznMRJpgIfp4RZhMC+j8i7qPgmOzeES5+imezzPrNN/7DdcFHA1/9A62T3yb1Ldko6xZOoFePPM6PiUgwB+dcMMLm65hyEYiBSftAj9OZ/Dt9suIgmw+DsZlCGnURbC5DGTFygwHDD0VBQmYRer3Rj1i0zmEeaSUvmAUdB8V7DSnZY1xQt4hJsZSFdvEeDq5VfmSOWJqQL3IjguKsYfeIqPOErY+mOu91J0CnjV639FvfGymiDOQTTkhxMOkpFYVM1Oyk+pbA1i1DnREJ1JFAFakqfcnr/AwqLN1RLFKgxI+4YuSpCXMz0e8w+0D6zmsYeH8AK+79Wt0qonyszHTqu+XZ1G/3VrJIVPmSST6DK8NpBBG9S9TTwElqvIv7Yz08GHsF0PtHX8azdubXd+Td6iBUF7353/VcPpITlLvtLG52hyUzdgxinUwo4pyerCoopNmLMc5UW+mi9uuaAElVSUZY6x0krphdS5BryWcqRJSyiWg/BjOCrrSLsmxGs19YukkX531XyTUhpj9RbCucSBgHoP0YQoKGL2pcwuhzBPBkrcPpDFGlKNf0OcHwmRjzEXVdGeLjduynyRg7pm2U8B4yoCyQwrGHXgQfi4dIBPfbBOGLqJtU4zscs6fv+3RrW463X0H5QpqVfgQSN/QzuLKy38R4b0E/Q0DPuLi3DL/QVCBe5zhmy4yuqHJ2e134eUadNHdkFrOFKpkdwWcYO1DHyntn4/PHp9bx+uPfIb808InRJlyYeM1ngxiKbYlboOmidTXAf3UnUIn2nX2AHneZIOsHDaUJh58I3zxdbFVRtEK25j/oqQFX8KUXJAl+F/Xmk5pReZuDFbzhSUQpeDHwNcFd3cukll9kVqewj4XbuwCAlICugPr8XdNhoVvgraY0b+0dITxI/5Acbv7kfsf/BRFUxCcVpj411G8WqOkpkbETG8EA0Xyu+b1AyimHyzPNaTbhBS8iqSx9/fHPkhUbspZcHyKvAFNvmxa2mq6xCCrMgcnANKChih3AqXv3DhqXP18kNk+n/tU1jpuiBlAlyqhLBDkCuFpVzUDX+mmC2iAfmMGJIul4feGQgjqydXyA0GI91j8bRWV7pLMAsIvAZdmFcUn6Bd773KDLPBpfbcXXxcWjjR+9JQU93k7HHeWQFHvh+/mXbz2R05EeCTgoBPBUQEXtEY1gXZMkyaCA20HtNAPGksAmrvB2/P8B3lQNVcBBqUebJr09gwvRAVUNWG+gA9YHU6PMbILk1mS4bz01odTSdTsaK71zUbwbfBacCzWLJC113PytdV9GDo59Pfcw4/kn36+HiV29IO+mob60j7kMruacFUk3rV9vIobxdAGRQCzGYLDOeAFMR0RfG8EgD1mUctxa6zg7driv9qCMYPqbJAp1wpIZ3KhNwWPQje2je7HTzvxUVTTMIIO+ckFDpylfe/Gs0JohBBgY2YTknu857cr9KlSoffP6pHL83tCDU3JcCOPWd+SqHFX2EMMYZveS5SLTDadnGR8G4ixSek2MfsAGjRLs59Nfxr8XnosFjhh/Jyd8n4fPqVy/PwQa5ukQSs+ZFG6FJZyK4hWOtIKeI890phsrLBxuQgftqsAgs9gkJA4KzV4t+queCWSFLFfVwrCQyeZ0lDgLh+AK37FEj+kEYTNZXsbiQQMu7x6IGjNxLHFgUNb8/iNOsD+eGPA65UCOlKde66VdTT8O7+r8yXSxaPC8vAB39ufXeR0LQZHK4SmQ+s5/UFz5C/jduZsW1Ixa4BgtOqEIyngba10aK/sewG/KNv3EHBKesotfySxN9BWqGSVDHh5Yz5L1PD6qaMytvFB2+AcAOmgMlS6C8g3CsqSR+hcajf/wpivMw8XrfG6Gj7QydLA5hX0PMT8GvNmqVcJ9yZqnlrkY8l59V8/Pu7LDS4caAxkUtvsSKkUPpV6dJezBuodKu/qKjc7ArG3nOyMwusn6cuX+919AQI78rNyxtWIr/oibauLr+dmUARH4kJ23d5b1aU0Iiij+0fSM60QX9hiCak/tCI5TuDzDiKQtT91DxxQzRt6JJn9+2PAzqQhROTv+31Jks8B1CPQYhVFLYEA+W84EiJBnd6P76r5ae4A/Zkgrkjk8t+OgEQifBeBZyYdf2ez1oV7o51QQe6tA/NknEREpEiJnDYiNQQ+b+j1zqP/9CrUMR9qp1vcA3jCTFzd1DDEfYal0NOIwKpeL2N/IH6rbmkw+f3yv6VzGVxPQJsU2qaDZFOY3TYsfLdXagrhj+5m1EbZ4xhpuaPojsb3HBt56CH8xyo9rj5h2Er48WYTGn3V8xS22mcQIQtbOlyE+MccZX2XReOsseUzgQ0tXJcyF1dzCMlZXbij5S246xbYiOX2nqpqT2hv0TM9702qvMufCBkgCd1WxlzXil116PCfAlY5iohdXqr86rKRrpbkrRp5spwE8GdVOQ5u+iT564RojOQqCaPct53UtjAl/v59u4addZr9Jv7/EZ+U6r1KCCeYY2vq6RIjAKb2JyXmTKhMdzaICpSjoye5Ol8qP0HtjbIHLDj5NO9c5N3xIVKZpXcxuY5XbtBtSco6xEe3oK3eZkPU6AKVdygZZgwByEdWjd7j4Zj282RVTHNCxBHacAJn+7m1v2oDca66kIzmNl9kgC/MZ/iy24msHFmcoLq5kvla7YfiKlBZ/h6+0Pv8iLWnCAScprhcgPX1k7GromF9GDaYIanpL2C8fDe89ly+akZvLPgs50x66/KAr4DTNU9Ek4rZ3ZCc0cC2iHXT1nXlO12oRm61IEt8tEz83y7sxlCx2Hov/YP74xheZrwxPgehnAX4E9nVEUWV/0xjeTLUoCMWJwti9vxTTKRuyxWJ14G3CHXmuU4wAarQ1Ebm3a7wfrUeqmyeWHMB7TXFK2N9L+Hb/wpCtVL5MSGZz4G5sq75gptEjZ4Fed6AtizQVye2J+i6IQDIHnDObILzeJwnzgYfpUZzvxplZDk9S/He5Aj0F0Q+nyQ8cH/GStOckJt7MpcynFlqCdgSxXhkRKoXVUhUvvLcR5/hpPEYHDbXhmQuA+LkI+cpSG7ZwrG8ltz3HYNJq45WLFXd2Vi8fzxXxKsg1OEfbuDPob8jL1TE7QEBo9Zq6RK1n6F9TShgtWoEES8/qk8c1wKi9izCbPb+X7qaBTPS+8RfaYiM8YZAEDcYYb/vFNt4u+5OpwXe7tFANIx6G+tStHDNxBKZOzvO6/ud3mlqO1stjEMI+mD5eytEVaRZxak7/aMoaNyjoGcrAF031Slmz16BMUDMLGbxWhvRLA/y0H4fQHweGtY9px2Tjgk8TJkGiAPL+qjPqr5YfCxRDBvmBPLbwwMkNGmzvKkLLltaDjPrBB3f6k3oqSSRIglI7ygTy0IEj/FFuZFWuGTouck8X3H6sGtGZ8smLwcNiZXzQI0eQIGXlkUxQR/pAiSvl6/WfKMKao2ebuZONTY2cBENL7cnZ6fbDK0MXGwQAbyXCQUPwZxUnd1QujJDmhS12hc/3FxvgtUVG/iizaZkVzKlwqQtt7ca3/inRvnKTI4yfNbhsjwFcwaI/YX4BHedA6cV7qQxj8bBUn8K3SLLnrmS4hqc1gMlj6V/3Mbs1Hu5tN/Gqa4RfvlgvXW+9ccl1kidZd0J3bp9GMp9fB70N0LNmpSeAvvdHMgNLG04nl7vnREUYkcF/CUx3hfjNpIjhhh7IQLOMOUYlCQuZENtLqt3hY4JAUIr2WiDv7IRQn5hWG93xMzA4fzIkeOfKLGHmQlEG14Edp65yP2VYNEcdv1eWBBRppRdYkMGkW6aYWGlbvoThGj9IKk0p1kpyukOqwFjZf1Vv8zgmiOi4b2PUgO3Qgiz8t3M6gb7NTA6uuOnBhtUio8KNp32tCOAUOv8uY27sR3h02gS3kHpwDdynV496HY20YFOwPmAWThz62yVrE0QUADUhUbTkDvliDMK6KZxNP53V754kUeYiq61GKsaWoNFkFCkP2CjGhfFEhhCY65DtLWRpsLcCOGyQRiH0G8CqcL8s2auhtNbZ80JU/oLtR3UJ+BlJXHyQ1ylRf/VJXFw5m1CPkxTrCj9EIVZlJw0sTlXy+MSSFrLniOoYeTwa7ZP0EIMIcdRykoYL8j083V/VlVKNqn1yMTyKFraEYWDE0Et4+bhQDAZxQkhYj3pb1MpVHEdYWUa0gkI2uMz6hcsLxTn91KUTHaVbNDssKtwS1cPPoAC0rq6JNi5ocM3AwdVyYIVrcCFPFxCSHVne5WLQFRMESPFoFcVMx5dLrECxDanNDMoFA9oaH51wTv9Gj3+J5VNvIqpYs82BNK7BlGqKckSluAdj8RR1GvMLFSWtA1zCACR9uZmIFFDjeYWAy+zyMKlmcUy1KZyDwJGbL+3s6/9lHsI6XBawBfJ9w5NzlFlqirx40S+4IgqXnpp7DuhDYGbNPv+HdSwdLI3GQFT24GXphdbUvb3M/Fmh5DoFma4+veXYPwYL03gHCIkl96reDxUZ6oPLZYkFMIq3841F7PzurnTepa8y0JGBiGK/RwgU0i9bQv8v4X6QYgz6ynPsgZXbQ1PU7WUsOkbOgr7oG1lYcnxEa/ShwHzKlSzBFEdauTqAB/cRJtEHEYaeuvqivr/B3zRsX4n9z29FPlGSVqJfj/cCFjzabivFswnLm5KldvBc9CmEjW0cl7/fheIPyaz+9htybwbqJZbl/N3OHp9laskWO3abeaSH8oLA9YfjrOdIKYExofK6vH/IdeNaHPLA0JG0yLy19VoyXTXf8HP8E8jAPwrgx/SH8rZRY5Rgb27ms/QVE27GaLxa3K+ZcT2vPiI8Y4Uahj04tA8Vvw6qlgtNPlyDzzWagO/iKU4zWBe6sqH15j6ouj5hv/OqfwuQPQBcbNWhwmOA3HKy7W/FwHB/oaD5Lg7EP5V6MvEOEpWK2kFDmEPO7zI7r1SmEep416DO6kNnkv/IYj5YD6yR/GT4Fq2EYnRWutpD1txUpytrhPEgjGVMvkZawKgc/JIb7WgWNy4flbeJMY1/pLFyUfwqAl/ijLPir0vaJ7QTSJOuSxR1jZFIa4/c9Fh1plr7+L8r8r9L2RDRSIhJInhsUvnyEP1oJb5b8T52XWZUAaU7TSWBMesFxDV2TB4ER8S1o/rq25NXCouxm2S305HgXbddN5Ob498lKidIANaRTnPVGhUkqx8vhkSyZoT+X1vbR1S+OGhkxsb6NBW34uGEwDF79h18lI7nETNotpPw8cJwpKgJOqsPzXUGlC1ZpcQWlqpEP3+OLJ0ZPSWHLl+aQWF2+JSoJSO28rH4dhjrG4Dtv0LZzbyoHulKVM8Kj/f8F0ikexgo+g7MpC1VUYIgagN/Jfp/2oWJlW8oZsr8nWm0CqUq52AqKPtseCDWPmnVlY1XMQ5UDMMZJVmqK9MtZSjFaMaHTl9LWnkGRbxyWKW0DWQrVpBm5BoL3BMsWaa0mlNXd5V3LMX1xPC/N0ch+dN7FauW9Ifeb+HI3XMIVWJcOdku5WHtUYWuKT1tCGn1Olr76c4OrUjSbFwXrWknTR6XxcptWEt1TxP7+pU/5AJuF70kQo+SfPgG62PzXgfuC0WTGGNCNdHu+O169o7ZxoTgkbqWT636d90ERkjhpVDIVP0Kd3+OqtwypjkNEiN5c9leN1zSfRAL2vLWB3/QT1tBwx9M8GDuhQCZDua0kYI2zS4lkgOYkMjc3W6/VQ26182sg3L05nytRUTJbeKob7+xVaPJqtvL0XnElgfExZ8MrvrLoYHLtvpDTna/EpaNiezcd1eyNHKTSNsoTued7TajAgXaKsLQBfVP2oa/Ttzmx6qez/L3zP3GMgN9GoXGYwahhvRMI9/T2h3GtQiZN9JFt9wqx52lJtYldOvJpeqDfjQeHpczXBKHrhYUMLX8wgwQbPdtdRKTTuS3q7CcqXrMuqD7KRXR6YgoCnhI6IdJ/an7z/y/+4aROe/r86/e3s2XDt6C9I7fiDfeO28e/AhzFAL59s3/IofE97KtC9Mn754mrLp9l80wlPj0yew+fK+guyfgiutvnG3qOiQN30ZJ0UZ0m8gdXnDsgbFAsmqihBesWeXHflxq9ROpNX9X4lPVqDtsGKpYpvCC3wjlMduEWO20uXFZv4an1z1f85bGj/8ZmIs1r/k/LVp5WrB3HU8ienZS7gJLHuekBw4BXAS0SSCKHXTsrU2Kj19sr4f0sLl50ESJZVowMusXLKPG5TLFdzXl/UOsQx4Xoy7tyILTrMqLlMaWkMJ/KLsP76HZJICwISbRMt4JQbcmR/7TrEHKy7Od2s26LPQcTUREJJ/HSwN6PWGqrkatYnE3aIOdJPhvigJIalv4WG/1dFhhdSahVorqQ+ot6J255ToExloQooxvDo0LbBDtDBrQWec6WTqxNuUN2gLrWzS4QWksyou93g/Ycfz46tW5/IHEq74avoVQIJ6lCxDIkq2RDSZbREh1aepafooUtQc3oFbtcTq9ZggbxzEmNFD/HORBkVDUS0FWtRPSdXfW2Hme8XdDWuPfW9xpsr9vBKPIOLlbcrDVdABNJDK3M+kAG1dX73Md35xAev+3fYtx5HQUdJQl06yZelzqre2wTmhxpKCqGtEj0f840/hhdF/ZKh3aFaPwYEDEmO1dAX0bRpKuIvkdQOvE3yaKlfR4hQaUF9bVo4iz1kvrMU5hjPpb3bfzXg4G/xYOsugw4clXnpAvpel09pChNdPXk1AgMzmU2+ACvsTsSJYrh+YPXe25C+fG6GiJ4n8guJMOrnD0wppfgAC7YQEaEZPA4Fwe7d1v12brNt51dCX/zulibMY4g7QJ2fqe6p2hU5ltLtA6XikYZ2zmzQ2pcXtOfcmatM7UxGSuPLKcHkNYmD8Xj+jY0UnADJJGrZpcqbhI1G6PZTJA3APTkhHnrRn64QbSw36eg8TGN+8bfD7auG80yk3rcaU5GWlmC04uka8JGWyEZUMbj7nJ29Xbv1UXZOFt2KyhU8r7zms7OyVc6J+hoLA9E0DqT/9kDrrldNdDkOslvzeEgOupSIpIjq1Q9sD+JL0eLzUUP8yrH33+pWveiYoVnwIQ7kg1Xb6cvbA3f3P6wqaN3i+Zhii4ljWOSylZXRFtWOGscGhxvPhMB6WVd+8ToghVODQhvnMgtZnQM8Ns+HK+ZA/wb1jqzpeWfTWcqgTsEbS8pX+NewVaQ1TkBLHhlk+0XyUUxRzGAP25Wguj4tCViHt6XZz9SkCdVn1+YbCIev+Fmcucmt0Z03vo6xDTr+CjqcB7UbYcUEL5BCZQ9YjmVGJFvyLYiEG3IGolpjLtFCLd5ziLs8YJF4sY6PwclCDFmiOa59sPgPyGsXpOga3upoOaUoH4wybHkcoj1+TUEfJ9vWThrccZezQ0yHRs+T6ocC6VzRYMEJBApHYjEMAnLb/P94ly/NO2mMO9EninOZAuVdi0nkwna1Mb3AiMm0llkz/k19iKLPyUpSfFrKjFqinF0nwrJTOtMtEgA0T13P7HEhj2kntDg7qtwQwPJpIdxhDoYPrsVsFtWxQP4eQOlbbsmAtj3ejod5XCyS8tOPqM3NTdLM48fwHl3oT8IeBcPZ2Vmk2b60rCX/8Q9wuKg3P8qsCoo6VFkt8I3KIBU0m0dX/yeiEd3GZcbNwZdUKfN2spG9kfMM3OKwJmyKtyhFZIKjEX+nfGCdB8l1aJrPGv95dsGgxgj1zwbe8loG77eWHOf4rhIjlkmCgDqZheKZJLo9BI92jbebBKQK3yqbE7hgb1zxLtnqxbbgvAAY4VDl/Ad2vAlX06ZTvwPngKTeG0kD6GNtdmEEevAx4i8/HtK3hDKzW/2fbLJRb7/Sg8gsJEXsNWMJnJ0H5q2yCbaW467+YFty7oxbj6ZEZVeZkfZehVmzfPLyvaPXzZt4wTvaNodwocuTh/XBQJpMPNjO0yXz04/hTSvvlFzv4poQ3usMHHtrm8cdVOFciUuVNIGDNVBnGp5ADzdKuNS8HaIOGGecf6Yp11ul4EOSPxGeJoAfVWHhudSRpQRv/GhY5B+gvPM+S66sqdDf9g9VNPxeg0P8RlmAMS7JHmpf1CL7RMBUjQ6S9+tP/IZqWn50BYteoHqi7btpgFL9/DDSbcNTVnG0CYHTX80KWpX4sfTbdBMcs4atCAM6Uurg8VVHLzNLlNn56oXcgeYgUCJmF4oVjscIcILiVzatEhoLMHw0QOL5cQie4n5Tkmr21m0C7SJwqQtKcquAvwe2JNmqgKu2OZg0AkUmLJcksTHUtpb84UCXINSpmDh2W1GY7lFYbvxcCNVlJI91+nV0zDy39IUDIpfRQ7MEl9cxboDnNd+hNQQfqZXzQuaG9CZJkV9uPLYox5hUqUDOzC/cluQFrOPNP8RfbE1fWSvxgOsIAh6aNFEjwMhSv37xTi4bhAiWb9l9IEXVJkHoE6YjUzGQrUismSZy4+nAyszNabHuwkOPxkHjA6DxuSvInxAePAlFNs7Empy46F9eIUuFAMm8inUnTdBntdVmC0pqS8xef5hjIPDj3G0HV1idRN1sUU3MZC251qHlJ+adMpTSqOiwWCMHSD73+c305YolaWhpQKxLdII5OK31+QkNe3EwPp18auJ5cWzBWzVoBx8ASFxKN/5+uds0pHbM1HMI7Xxh7znQEveCFmDOOupO3KmKTTMEZ/aY3KEtNBq/3Mgb7gHdRdeAKXQhGo4vtXt4A+ayc8ecvbHl4h+KQR94OCcu+03CuXRkABkcM6yYWoZ0TdkgWnJ5EComKWO5Ij1hNwwMrmTE365FjB4hzo1ALheoAKgrSx0oadDy7QoVcpYJTMrpBxOPjjIdKORFF1vO7mG3GYfwC80Gp7bNXdwrzHXvN7NE9B7v79feUSQKlC+PN7YEeMI/fSlM64k4nZuK+plhEHrLCK1qgOJWcriX/XU0n6Tu9VUcn7m7jikq68/V2MCBfp1V1EJxaNKXuqoA+8qpiBQ4cPslcMzOKh4fx4w2937I4GDO+oIbe1uzlxl78IO9n7Leh75bNDjczjvKO5a717rxYeUbA8J9v8NfRThfRy/KNub34ZhJTkcF+/fIMsL/ITJ8i1fZkaDgbj/gsWQlCOiFqTfNximfN/Zsa2/5zSW/zbpOofxPx4d/PRrnQzb5w5L73ed3jAaGyiy5MuVbLG6AtPu4/t0nZVHxvCjaD9L28vZSGONRCqo5E1B1ZYFvxq5ekWj7VjhbiD65s9UceBG0NtYHF075m89f4XNS3fCDFsEGdx88algbjcC09JklgPlJcJWZ+zc2wpb70lH/a9fjQSUQ0zBmAXSx3R3VxiFmz/g6fBn5Kf6s4N3CBYngR3GWwH8pSACUAuQ0omq0kTf6ATtUR58LOjJ9DHB+WE5RY7tu2KXyGUp1qswjuck+4llMHpD9DOLJMSXh7PA4mLoRkxFfRW77GLXvRRlrnc7YpfNjVUTc1uPvyU3wYUzvlg2qsS2ZWCCKvNpx8G/x+frSqcNVDWnM2YLu4VapnQZGdWOnLN1utXE4CBXCdfdlOCkd9M18rl4LZTWE9O6Fi8f1YWHwB+yoGYxGdDSdkiVm1jTihGXP2seHzNMbebl2icx4Lh2eSk3uwpYkFYPn2oRMapkEHHI4Hb7IPtBotQmzfk5OANFkDeFi1XMF/pxkH7lMplDVGVDw2NGKouOxPY7IZnRmMZBkBqvHtbpOcxzAX0INJJPGoVV12Szo5rojJArcWJhS4+64yJYmDzvmKL8LQUGwIzcYanJG51NS53aSi9LNxPIspW+Fq0rEmjaDaEYCiAa/u8Qon5VqElDpTDXcDvC7OHx2wecweIIBBwM2NvHeuVn7DWrvJaO/FDVEZ3HbarBLLhXhu0eXl3WQoNJ5LUN2wLh+waOFiNycMFSsN9CI+NRaKpR6Z7vnVRCqEKqLKwmA6e8cU9AlVDT55hrZ+Crp4CmrnLBuEt4isGpF7PPpmxFasUV1D6JXSSTVrOPqLwbKqlB8AHguJAtTDtkc7bR3IcPT+cnsiiAlRf+SE+rSqbUsd62pMhgU8IKrLACr7uhdSBqLBDr/Y1yYlNT15VzWDmOxQxy1OqQyRTPr1N7ANX4pA+S20x7ADCgT/uMW3l7c+yL5Agh6bNFW9ByahQZeJI+sKqIla7cbwjMeOVyNNeGn6OAi7IO4R3pf5xzF7DQaRjx3iHQ0BJawjtAoYtqIEtFiqE98FvH7uYabNY9SYsaDimbA89tZQgC8pmwkyPQItx0XMZHWsyEsulULqBefjVvadtGNTGbVRkbLSKt3hArahgNaGwHnRenV6mJwNJicRFIpaeHew/GJ6TAhh4+lNCmKdp/oqc3SI4xq7geaK1RMexO8jh3FmtOeTQrpAh7QamtS+uPjj/EtRpnTtKK4MogBoVgm0MT5trfeiIVbIPa51DTcoxjJUZChh1jt2MQ/OOW5BZSIDIixGSyf2UO8k2AwrJ9aRW5SerMF+NMSdXZQCv/dutjCWaIMNtEZodAi72vXcUyg5d84WRiQ/8MzBdCEdGcRs9chXwX5CsJVzBU8qdy9olVu5fxNDN9uUrENt+lnUqTVL2Ps9tvpLWfSJcSzX1tS7d4MoU8gbuHDNMpB/YVEIGVzgPBo29ro2xdxQbu79bQ1NrA16DibtX0TDvMroN6f26gLTh3AeTuhaKtzkP3TfC/CmNbOXuat0AqO0KMuQ9RRGSrQNXg4x6jAnNF9ZKRs2ZbpVTc9UOQaP3GbLhCsv6D7jh6iUvBnmccOCO68/G9REYe/VeqkdI964VWqqMvFEqkQg1VXOq/TKxkEqYYEXo8z19gXnnsi/OeTDiBLSl4dNBqruM0e5UQ6Yn2/S+WjnV8/z/Nx5IFFiNj0na6zslcG4D3e1w7qp4pHxojJi9K1r/4rGIxtWYRFDSk8tU6+ulmdsD2w8E476C9BS9jrmVVJykAB3Z46wWTMCptbS5vRvA2gNZ3I90Q54hqDg7vhkaVuqAy6rNDYrx/udoJIeP0VT9TPfGog+hjK42yzVPlYBBljCAPYqn0WfAm3Rp8x7+PZuhLBZBk+KZUMZD+hVcS+eqtEzBVc58/7uBFJN7snTlPH9sBwpm/+NK/RdUGqgrK6hZWGU9amFpRuEhEt1hN/viWqQ2/mp30iZ/y1Wy4IBIh/b4mV5HurVTG151aS9fv6/8shBC8KYjGaGd8AswGx3thSDmIcVcoMphX8wVSnoPFZcpOodWQ0FUoVpAXNSW430s4ld5RV7h/Up47QqJWImg7Kw9QEvZ3WBlc9azPvT0Dejel5QkuAFEVNdtbO/hk1KsWhgVhg4B5vNVpwZcZf2krGMeOoCS95wh4W32NuYEquCEHGDmDoJKc79IVyhtJDah587MqfnOxkfE2iGxtqrmmPsBn3YWsq/qJ3qgyjMwile/1siPPS2o8OqXcNacgx6BxZc4HoB0EeI0nrDLRofMWgxqeMB9i0+fafKOGk+USljotFiToQJUj5IkTqpe8lu6Kgt7wFnihmg1HDLsgGabo3e9ZJBgW4pnIRwALSogiTqXy64HfGnu94MdoyBFohM1lYzU350qjxOX/dyno28tugXxx/VJ7x1Osfob181DemdgsObFhRUwjb5EDSOUhbdbOtnvei4uG4IGf2PP87fmtrDrJuUmvU/UH+bVb8KCfqwP3rszPz2RdtUx9JVDDv/eAO+soRjOfZSBTNCTMmDRXzhBsNvtJi/FNyJVUqyqxSexYySvsYWeLqpeNOqg45cymyXcaq8ZKV7M8OmPNzL4Q3fdEjegmAxAebDdslLuLBaH+Bzmzeh7PjHd/+mDCRN9pLWrxNqsY+94YpisoasBHVyUoIzPoq7IWyZ1HmsXNdoMM3g6U+C+aySlPzAyBMOfwTPYr57Z5LKf+XoSfINzTwx/H8euGLdoc3vdlPKxLlsvEF+KQs6JmjthSslfF7PjWtq2FJaKpz8NeYfsw7hn80BuPlq930xBUFZNVuHRf/fJ1/r4qKlihHjdEmtH74nJqWGu+9O0YTY2mYwLJMiK7iMJ9sg5mHxPK4yCLH+M8yKUnkEA8SW5I3ieVZCOlpv/Ct9u9Qj1bSsA3Gcd+R2OEnytPq0yxYKZYm2oOg8x2wL0LuyJe6u1VDNRa3GGcxTN356UTbhPCeOmR6ECJTwEJ0roAbckzqclJcwsVG8S9BuThi19Mh2frMWT7UP3ahJpCQY1W36Qe/EueVKS4l1K5X//1ib3Z7g3CqGxh7xgfxeCHpKJdjm0obWlZzMGLmzlSmp5jfyt/YBlYQLtvdKaVypMlItdUwlyFtLgkeuZwerEFck0P16GRL0+X89+KJdbGDaRCXisFqmkeyXqpp1n76ttSNbMNklrhAAmFoD7yVhRWfGYRQvtrJKJIyT5ItgOFDLtE0VPLOHEN/aiBiVCSjxNsnyT7lPtGVRCnNwDII9WlFonQ5fAXPPQ4Av5n8pszLbv2fgMJv8AzEZfW5VXK5FKdsizJwdjnz5WkHoG4yc+4otbnW+nBUYptYPq6odCW224q1o3jCQOGztOkqZmv93B4tcHV2+TIUzuQAe9kX4ZLZu3P4hMp78TNjFVwaQOS5AYKRazbA/eJU3GVFlmuggmw7uiRYlN+4+QwwsPUNm/D3iuw1mcUeefLI+avcrKPvqWsS9BFcIAGqbadDFWyTcG+eXhG7B5JEfOQEhjpdkrY5CSaks5nkiUzjug2yN/cTq1CgEAveTQuspKPpLehp9j63FnXfTA6LzRXcaAJy16zZ5eF76nkn5ikrz51BlU8x/BbwRia3yfWgEovVN1IzIr3DS8dWCWKrwqNaJH4dpj5mneoEHQhm7uBncINVJGeaLv9v1ON7kPzL4UefuzVbSRSeJ44uSSsKs5Ncuth4ePbITrxgeRzLsiT/s9YaVuYaXRMcbNzkHgZmC31bWdch1nEu7+BozJ+J60KGD8n5HbuIIp1uzcO/VAys2OM0lOzEQZywQwZ9wPbyDaOcopR62nXWrTXbprmW3A7PaEePH1rCCo91ZnSDxOYZvojD2Ati91MDQXp04+Qoj7cQQj0HlpNPu1jY9S9CIupPewiiwBL5ZXmVPnxHJGbXv5FL3ej4t56tzH596/R8ovY0GYHwY5UG5Ry8GNcIW9/oT8ly18lpwEbnJqf9EJJpLMY28izvLQoysRpC8HjDeosq1ieiAvO9oc2HrBFKXe5DOXNEXekhh5AGc1rihv0QYFG8kf3YgbNg2xo3Z4+ykBpP3sqyB+rzCYsNLsSM+psc4JKBe9I79vNJL7NWbF/PN8Lde4JWgowcc6JK7ru1B+xUBei5jj2jMbCgUmsAObr7BSa2lvo4bwg8TqF2bvggF6Lyym1ZceM5TIKw3mK0VBpOBV/WdFq8FQ+xvugi+mAlcRM/WD7eQ+ucaZcUcYoDwMIGg/qgJFPouSLC6jEPfD8k6wNjNGmhDmdiSo+eJ2Y9E4Ttb4F04KT4fShGDaB40IaABhINZBPo4dj2IhOUjtHj5Xj+7vFyTw1hOAxF3/7381w5SRgcxzpfPIeluU9Wtd/QypU7FOknngCrPZKV6FIyt80zirezvIX7iuH78QMTDAzpeT3X0ngQm4DfXDASb2jWfknP9F+JHfeMsmvVaZjCawClJKd2rFztDkhmvm5QL7b7sG3YsbW4DDeyIR06rQNTQijJpzgw0zHtgCqvVqrV3YuY77IioqxhH3lvFchdRuA8641cC6QZV1lqcg/gknteWn7dT3GnyxPL63hTHGMbdpoCj9O9WHJfa4N02YC7PBZ0lmsiM/fPWUKreuOfEvo1GdcCIH3pttlE3HttjGwo/VXa7g1FPn9qF+4IuJmpOdFAcuLbwSrJTz+9hifUt1H3RK7xfF2CgsQ4V8Uc5CeXmEk/7fgHBrt4VQPfjtFcvHLEv7QfeeJ7GNeZvXC6/60cWzoQXbfypjhmq34XuQ0MMJ73HXA5xfJvja2nUu7tX8/pJGtXQW0MWnzOuL4X+dQJvjmNDh5U1PnEdUFKdjspOmtEWx8fruU12rV4TxxfBzdPCZqp9mpSIdhbnYf1SeSBPVL6PwM9sIIi8gzMRHgXpjfLQTxasB2gfq5V3XHnVI+6OokMnKORmuWLnxkNKMMWPot/h8tl6GtEvyD2WY08sq/R6mmZ5h+isk3Xluz6YGqyUnAK2j4IouIolqPfI42VsC63FlgOYV8vb1o7mISeO1Wd43M8/vH5u/25EFHwBkaBPTJARIDi3fWHyJ3b1Fz1I5FWEXw3mnYpbIu5h7C2Hv9EcMjINIXrJ0Syb3ADZ8PF1hzZMfxIWgEx6j1BuRI7RQnJUUNNLuZsWimSnA9YAJSGdImW9NhUM7NOi1YDXGkkZsXt7k6ESsugtOSuadRvo693U9z+VCz3EbnpTaFMF1F3XjoIq3B0B5kmrLt1G197EynnKR7MAffLojs4Sqg2fdt99rNAOUk53XW6l6A7disW5TFPBSZ+tzUgZ+g+nNtB2AlwJQt8LhAf4Oa3+AVQW1tIrjFlU/nUN5awQDXP+YqWkZnvyVo/KfnOkY6xRVnLQ/m+qX9ljKZOH5/m7z02XmZamHFBZtvikOISHeSsrhC8NrWE1KwDBL+x9a1/6ykpEEHs1+N9Md5GdbO9RZ6Cxw1XoNkyzXbnoPl62h7qfYUOLBSbeKfJDlRBcpZQLZsHTDq9qrKxlCXOeqsVAhSpLqQejPgwOOiRWaFfiotcyLZUpN2JfgWPQATMY3+OB/5DSWM3TaT8EoHjynwB213o0vpDpiAA91oVU1y/tUDF1+hAF9dPeluiqVpccwyj3Nax7m0hOhYAOkkVPIkaUGB5L1uUDvnLmT2uw0+iE41BUCmNZIB9YlTEvB503672sFik9DRX/3EwH9N2uR4acgrAkmPhqEsipQ3jzZ8W7AgmBYms3dwo5MRx6nisypCEcVSPRqF3yjqqFf73k+6ZcpI9x3+r9UQTMp33cC8zE0Q++K7p7pbWayhesXX21GTB2YsrrlqDkyemfY9aBl9um9wX4KOkKyKGVy2eQJtkt/1U83KUhGi3sScKeNADD2zD/1BqqDIUDPiRNAjCCRBKOyN5kbaDKNgseIKGJez/pCdtx+GaVIpLvtpkF5WWsA7skui3TVsVptOtgnzR6CR6wygEVUKM6JM3Bn8hCC70tlAD0jvpYBlG4iVGAjAjvAtLVwtfF3eW9oIH5eUR78D0sO2DydiRJKz+yVSjLg9PoMV7M7+0OoAU2fpHwAhTFBJAgK5InWVGu2jscsoO473cASGe7B/U6tJUXpFDLShPMIPjOTGFXGW0cIC/tZr73E1uje5Wkz5Mzg4EYF2Uhf0TWu3y8eAghkMXam1qzA0i+CvQpwR/LVh65StOdJK54XXth4LEHGfGcUtIhRFefL0OMpZzaRWYwga8XNVWa7p985hboyW8Ze7b+VNZiA79xV8ZMF8ip4qNwxcxSfhQeMnJea8Y8u10P471CeyPmMuHHjqx070j629jbmdqF4RL5cMoh/Jq8IJU8AqcxRLNvV3hLEjmv98WoeNO2K9HZR7drrYAPpaCK9QV+jwRfO8IOl48vu8NZB2tXpbWN40esfCflu5XJBtmrL1Rs+FDZKZa2CHG9itZAuJEySVqH5Fr8zBgeNAvO0borlo+M6CsAvYdMOuiujoS5bHxVUPxfuNni0fb4TKyCTCYfFadilQCktgazZrLZ/jhi9qf+9nJMS/WTVxZbc7CSXP2ACHh4Qr+Ar+kIVYLt69rHs8VvFuRLPvrAcvAejaIs+J58bNRvdCHbLKE9Ef6tIjFf9vXVOc9Liz+VqMgiaK2H9L5CMc0jATJvFX1hUGzPBBD4B8kmi1adwZXPr9tsy++iooWFUk2xYm57bBOKAplSkM5bKgkqtyFUJyY7uIe16uUjapf0myFp3xduwh0/ZwbY9k04tHEWadp7w6IniH8TNTWm41aGU3QkgDruUTFl9jEsrhCdOlKhWNFagMMmQEtxBm7311o+uGeKdFFRK+s75a1zgIrygcXsRSJQ3wWJO+j1PpmDDISwbBLeJbp8yIJAc+Rac4GHynTSSNRQvA4LJ37W0ilzKXb1q5QAYkckk7SrHrczMAvGOYQuhpsXffL8y8f1unStTMqrdc4cisthjg2hQLDx0QTxWhJAvfzCZ49PAUXYsE6F8B9XJ58HU/DDdxf6RSait+ESTm9Mx993B0NmPwmhULmMLo9y3Gn61QDWp5FjGNXOXEo2Jec8NQuY/lk3+sf1Q9iIxxzjaRZXnPcQG3l/0sQMycqNR3qh4y/5ehFUteM4kV2k+mwNwkSFfTK7rVPozf1KW8Jo5awXRLV0kjQ/2smIWjfBy+FCtUVBv6B97+bDvz/El8y5SMXclmkpwYXe/7BprfPRSBuG4G9xnhmFwDzDE55r7H0rf2NynTFlJIvXvS1dj2mdQGn43CqDJfAp/vwHepJsX7NlcsnB9amoTJm8YrpZ/4Dyeu53VKQ6Q+PRLB+Uw3dS1K1KfVuhYPv65HbHgPJFW2DgyL5yyAi4BHCKmnI+xPCtPiotwfR9gjoXyYEUuG9Lxtve0R8Oeq6J+R4IMI+qabPSJGNF+AFhWbVLCTAhFcFCQGtUoSb+4WAZTpOKLhcaBgub8q37HCYJlLh+/Q1887ucUbil4TkrUBmefwYCDADB1annD/wRr7ZgldQprxcQHqLoaLmINuDpOg+0c41azx964AFR/nlsD4GHZV1Xb6hmI+mlSOKr+/GFQ26PqCwixKCqo0GSeQ2KP3CYrHZmoRNtSAl4YnvYs0Y1MsJUcChbPf34Zd9hNe5mz15R5gGFYJUvTaJSWTlRsMQwZb9b7UnfNgqxyzWEq8nwhQc+ATxh3CtrVDR7DeZUZK1GL2GssOHCSwymDPoZZs2WwE5jQrdTfQwWnXwyD5Dh65JOl1W5QZCzyRPwnj+kFrtKxok31EOAAp9uRtRAzJvAbqP/CEdYSrIjL3Gq9Ic7hnP5iF/kLcsFoyefcdZNpor+dBHC8nr6OU6jv/FWPbOAYe31wNNyqvMebecs3apxJk0+/4Z1UIsq44tAd1xIsUcLW4U5Zlaz5CadN2UpjgM3aCUBhHnk6kgdBymm2CLgCEshjCoqB9Ev98WwVKfmtInpCS8JCesEmaEaJTxJPVzBBhrhqNdSO88p7UxQndVLSINhswB7Nkj+XqXNLvpynMHGWWwEt6C7izO5Br82vXehFV9OmdJsh9B3qQb/QK5yHl5RPSdj8Vxi3Btg0OLGo/g0b/qNbEsM+R2tjcT5XEt1OdZj4zNOhSbNcQlKu5POuA/Pd/DRew+DugRdk56CrKFS/DTEfMQUqlUw87d69HbdglRGIyhLGbe7di/r0QdzDTTAoper+HQx7Vh0TLQ1L+pD2FjdGpO2n6Ele+B7WRDFmFqnExK9Ar1HCXprNF6rPGVX9ouGvMoHVq4QPGC986St76Ns+APWWFtuxNPLSFyDGAIay5+YA2Ct96odVEQsX6pc+6AyqgDowYWn6nMjRYol2S4Y7WsI8owh1aFNMzeCfZnX7rYTimAbGa8QEjd6hlBgEbDFRM/sSE26o0gTuNEmE/x0W6QtGM0Y89M0E2/nqXutkDsXWPXK75EKqLepHZkRHF+lCp7lZ8qWECvMUyqLYjbeLx9rBm08p/uhTDisdEyb6bCRYrNbmvHVOGcRi5pBEcoqvK+2VWbZwLaAyKhbPIycA2bTyjx99hprpP5N7BgAaxUqfzhzxiVJ0pJM6JLNS8tvgGDRWbdqDBTqbmYiS1LfIqZ+M/0BXMrlo2Y7Bx4+S5jCX/ng3gQf/jmWgWt3eRTzgr8YmHkwKtow65Fs89LpA3ThP1Nmuyz6G+IzGbp2Ci5eCYaILV5to07NXCuNBlCgZ3usVzEE+IeybUTLxQOKKb4ft+Lzbra1Oq+Bpx3NQEQRyOyP8PBjNqI5t3X648iqkZxjbvPZvnAtMwaLV8YSdxKT7hKHrQfP0gLzUV2Dketnu60egRtKEQqq/ncAAmmlTgvp1kWRcCHd0pupOSI0ZzSegAWO6PmFWKpVBTOpSy63La3uA6kXT8wa9AX53c/J+1LI1RS1qMEIvWUGquzzOX7zc1i8JU3++ohwD7AMXcYbiCpDSE+CiDCWUzx8+y01FjUpjdHIB6FahiBYUYIJyRXkXBZrYHG8/eygdcYm4H2cXNP2VKcAjPc2Dv8LN0yosaJqihciVnnoUlvbArPhc7OdGStKEyTklkUb6HFEsA4bN3jV+Q6kzKyB11F2cVgazl4vsNqL2v2bfgp591esc48JqTBzNQUMb8BE39n8nqROWjZvk8dTwoRqfRPAmsYcmiR2vG1qzZVfvPxL+Fnp3m+DLw7q+dADdvxMUxhGQvh4p4NWayF/yYDupmrUc7tJvk5cCbjEi1WxoaI97J3ZW4nOCFMTbbqm4XRORkpjIHlJY2+suac3o5I0ee6jUR7bfZO17ytQ3vH6niVXsYF24Vp3Wkfw9N/w4kSEL8nyJFer8Yfqn3lQsZ22/iiaIeMVYHFKvjuk="};
-        
-        var submitPass = document.getElementById('submitPass');
-        var passEl = document.getElementById('pass');
-        var invalidPassEl = document.getElementById('invalidPass');
-        var successEl = document.getElementById('success');
-        var contentFrame = document.getElementById('contentFrame');
-        
-        if (pl === "") {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-        }
-        
-        function doSubmit(evt) {
-            try {
-                var decrypted = decryptFile(CryptoJS.enc.Base64.parse(pl.data), passEl.value, CryptoJS.enc.Base64.parse(pl.salt), CryptoJS.enc.Base64.parse(pl.iv));
-                if (decrypted === "") throw "No data returned";
-                
-                // Set default iframe link targets to _top so all links break out of the iframe
-                decrypted = decrypted.replace("<head>", "<head><base href=\".\" target=\"_top\">");
-                
-                srcDoc.set(contentFrame, decrypted);
-                
-                successEl.style.display = "inline";
-                passEl.disabled = true;
-                submitPass.disabled = true;
-                setTimeout(function() {
-                    dialogWrap.style.display = "none";
-                }, 1000);
-            } catch (e) {
-                invalidPassEl.style.display = "inline";
-                passEl.value = "";
-            }
-        }
-        
-        submitPass.onclick = doSubmit;
-        passEl.onkeypress = function(e){
-            if (!e) e = window.event;
-            var keyCode = e.keyCode || e.which;
-            invalidPassEl.style.display = "none";
-            if (keyCode == '13'){
-              // Enter pressed
-              doSubmit();
-              return false;
-            }
-        }
-        
-        function decryptFile(contents, password, salt, iv) {
-            var _cp = CryptoJS.lib.CipherParams.create({
-                ciphertext: contents
-            });
-            var key = CryptoJS.PBKDF2(password, salt, { keySize: 256/32, iterations: 100 });
-            var decrypted = CryptoJS.AES.decrypt(_cp, key, {iv: iv});
-            
-            return decrypted.toString(CryptoJS.enc.Utf8);
-        }
-    </script>
-  </body>
 </html>
