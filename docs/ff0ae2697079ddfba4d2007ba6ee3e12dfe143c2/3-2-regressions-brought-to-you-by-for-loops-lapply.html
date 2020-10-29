@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="3.2 Regressions: brought to you by for loops &amp; lapply! | Lab Notebook" />
+<meta property="og:type" content="book" />
+
+
+
+
+
+<meta name="author" content="Brianna Bucknor" />
+
+<meta name="date" content="2020-10-15" />
+
+
+<meta name="description" content="3.2 Regressions: brought to you by for loops &amp; lapply! | Lab Notebook">
+
+<title>3.2 Regressions: brought to you by for loops &amp; lapply! | Lab Notebook</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#intro"><span class="toc-section-number">1</span> Intro</a></li>
+<li class="has-sub"><a href="2-hrs-data-wrangling.html#hrs-data-wrangling"><span class="toc-section-number">2</span> HRS Data Wrangling</a><ul>
+<li><a href="2-1-attaching-data.html#attaching-data"><span class="toc-section-number">2.1</span> Attaching Data</a></li>
+<li><a href="2-2-organizing-restructuring.html#organizing-restructuring"><span class="toc-section-number">2.2</span> Organizing &amp; Restructuring</a></li>
+<li><a href="2-3-filter-subset-and-organize.html#filter-subset-and-organize"><span class="toc-section-number">2.3</span> Filter, Subset, and Organize</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-analyses.html#analyses"><span class="toc-section-number">3</span> Analyses</a><ul>
+<li><a href="3-1-constructing-resilience-measure.html#constructing-resilience-measure"><span class="toc-section-number">3.1</span> Constructing Resilience Measure</a></li>
+<li><a href="3-2-regressions-brought-to-you-by-for-loops-lapply.html#regressions-brought-to-you-by-for-loops-lapply"><span class="toc-section-number">3.2</span> Regressions: brought to you by for loops &amp; lapply!</a></li>
+</ul></li>
+<li><a href="4-graphs.html#graphs"><span class="toc-section-number">4</span> Graphs</a></li>
+<li class="has-sub"><a href="5-prelim-prep.html#prelim-prep"><span class="toc-section-number">5</span> Prelim Prep</a><ul>
+<li><a href="5-1-task-list.html#task-list"><span class="toc-section-number">5.1</span> Task List:</a></li>
+<li><a href="5-2-measuring-resilience.html#measuring-resilience"><span class="toc-section-number">5.2</span> Measuring Resilience</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-drafting.html#drafting"><span class="toc-section-number">6</span> Drafting</a><ul>
+<li><a href="6-1-specific-aims.html#specific-aims"><span class="toc-section-number">6.1</span> Specific Aims</a></li>
+<li><a href="6-2-chapter-1-introduction.html#chapter-1-introduction"><span class="toc-section-number">6.2</span> Chapter 1: Introduction</a></li>
+<li class="has-sub"><a href="6-3-chapter-2-background-and-significance.html#chapter-2-background-and-significance"><span class="toc-section-number">6.3</span> Chapter 2: Background and Significance</a><ul>
+<li><a href="6-3-chapter-2-background-and-significance.html#defining-psychological-resilience"><span class="toc-section-number">6.3.1</span> Defining Psychological Resilience</a></li>
+<li><a href="6-3-chapter-2-background-and-significance.html#current-understanding-of-the-genetics-of-resilience"><span class="toc-section-number">6.3.2</span> Current understanding of the Genetics of Resilience</a></li>
+<li><a href="6-3-chapter-2-background-and-significance.html#gap-in-knowledgedearth-of-research"><span class="toc-section-number">6.3.3</span> Gap in knowledge/Dearth of research</a></li>
+<li><a href="6-3-chapter-2-background-and-significance.html#proposal"><span class="toc-section-number">6.3.4</span> Proposal</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-4-chapter-3-study-1-validation-of-resilience-measure.html#chapter-3-study-1---validation-of-resilience-measure"><span class="toc-section-number">6.4</span> Chapter 3: Study 1 - Validation of Resilience Measure</a><ul>
+<li><a href="6-4-chapter-3-study-1-validation-of-resilience-measure.html#challenges-to-resilience-measurment"><span class="toc-section-number">6.4.1</span> Challenges to Resilience Measurment</a></li>
+<li><a href="6-4-chapter-3-study-1-validation-of-resilience-measure.html#importance-of-measurement-validation"><span class="toc-section-number">6.4.2</span> Importance of Measurement &amp; Validation</a></li>
+<li><a href="6-4-chapter-3-study-1-validation-of-resilience-measure.html#approach-for-the-proposed-study"><span class="toc-section-number">6.4.3</span> Approach for the proposed study</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-5-chapter-4-study-2-gwas-of-resilience.html#chapter-4-study-2---gwas-of-resilience"><span class="toc-section-number">6.5</span> Chapter 4: Study 2 - GWAS of Resilience</a><ul>
+<li><a href="6-5-chapter-4-study-2-gwas-of-resilience.html#rationale-for-a-gwas-of-resilience"><span class="toc-section-number">6.5.1</span> Rationale for a GWAS of Resilience</a></li>
+<li><a href="6-5-chapter-4-study-2-gwas-of-resilience.html#approach-for-proposed-study"><span class="toc-section-number">6.5.2</span> Approach for proposed study</a></li>
+</ul></li>
+<li><a href="6-6-chapter-5-study-3-biological-functional-annotation.html#chapter-5-study-3---biological-functional-annotation"><span class="toc-section-number">6.6</span> Chapter 5: Study 3 - Biological &amp; Functional Annotation</a></li>
+<li><a href="6-7-chapter-6.html#chapter-6"><span class="toc-section-number">6.7</span> Chapter 6: ????</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="regressions-brought-to-you-by-for-loops-lapply" class="section level2">
+<h2><span class="header-section-number">3.2</span> Regressions: brought to you by for loops &amp; lapply!</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pgs =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;PGS3_HEIGHT_GIANT14&quot;</span>,<span class="st">&quot;PGS3_WC_GIANT15&quot;</span>,<span class="st">&quot;PGS3_AD_IGAP13&quot;</span>, <span class="st">&quot;PGS3_GENCOG_CHRG15&quot;</span>, <span class="st">&quot;PGS3_SCZ_PGC14&quot;</span>,<span class="st">&quot;PGS3_EVRSMK_TAG10&quot;</span>,<span class="st">&quot;PGS3_WELLB_SSGAC16&quot;</span>,<span class="st">&quot;PGS3_NEURO_SSGAC16&quot;</span>,<span class="st">&quot;PGS3_DPSYMP_SSGAC16&quot;</span>,<span class="st">&quot;PGS3_CPD_TAG10&quot;</span>,<span class="st">&quot;PGS3_CAD_CARDIOGR11&quot;</span>,<span class="st">&quot;PGS3_MI_CARDIOGR15&quot;</span>,<span class="st">&quot;PGS3_T2D_DIAGRAM12&quot;</span>,<span class="st">&quot;PGS3_ADHD_PGC17&quot;</span>,<span class="st">&quot;PGS3_AUTISM_PGC17&quot;</span>,<span class="st">&quot;PGS3_BIP_PGC11&quot;</span>,<span class="st">&quot;PGS3_XDISORDERPGC13&quot;</span>,<span class="st">&quot;PGS3_MENARCHE_RPG14&quot;</span>,<span class="st">&quot;PGS3_MENOPAUS_RPG15&quot;</span>,<span class="st">&quot;PGS3_CRTSL_CORNET14&quot;</span>,<span class="st">&quot;PGS3_EXTRAV_GPC17&quot;</span>,<span class="st">&quot;PGS3_AB_BROAD17&quot;</span>,<span class="st">&quot;PGS3_EDU3_SSGAC18&quot;</span>,<span class="st">&quot;PGS3_OCD_IOCDF17&quot;</span>,<span class="st">&quot;PGS3_AFBC_SOCGEN16&quot;</span>, <span class="st">&quot;PGS3_AFBF_SOCGEN16&quot;</span>, <span class="st">&quot;PGS3_AFBM_SOCGEN16&quot;</span>,<span class="st">&quot;PGS3_MDD2_PGC18&quot;</span>, <span class="st">&quot;PGS3_PTSDAA_PGC18&quot;</span>, <span class="st">&quot;PGS3_PTSDEA_PGC18&quot;</span>, <span class="st">&quot;PGS3_PTSDC_PGC18&quot;</span>,<span class="st">&quot;PGS3_ANXFS_ANGST16&quot;</span>)</code></pre></div>
+<p>Use a for loop to start setting up the model to run the regression on. Here, each pgs of interest is being joined up with the columns needed for the model and grouped into a list. each item in the list is then named to match the pgs of interest.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (p <span class="cf">in</span> pgs){
+  <span class="kw">assign</span>(<span class="kw">paste0</span>(p, <span class="dt">sep =</span><span class="st">&quot;&quot;</span>),<span class="kw">subset</span>(d_AA, <span class="dt">select =</span> <span class="kw">c</span>(<span class="st">&quot;resilience&quot;</span>, <span class="st">&quot;PC1_5A&quot;</span>, <span class="st">&quot;PC1_5B&quot;</span>, <span class="st">&quot;PC1_5C&quot;</span>, <span class="st">&quot;PC1_5D&quot;</span>, <span class="st">&quot;PC1_5E&quot;</span>,p)))
+}
+pgs.list.AA =<span class="st"> </span><span class="kw">list</span>(<span class="dt">PGS3_HEIGHT_GIANT14=</span> PGS3_HEIGHT_GIANT14,
+<span class="dt">PGS3_WC_GIANT15=</span>    PGS3_WC_GIANT15,
+<span class="dt">PGS3_AD_IGAP13=</span> PGS3_AD_IGAP13,
+<span class="dt">PGS3_GENCOG_CHRG15 =</span>    PGS3_GENCOG_CHRG15,
+<span class="dt">PGS3_SCZ_PGC14 =</span>    PGS3_SCZ_PGC14,
+<span class="dt">PGS3_EVRSMK_TAG10=</span>  PGS3_EVRSMK_TAG10,
+<span class="dt">PGS3_WELLB_SSGAC16=</span> PGS3_WELLB_SSGAC16,
+<span class="dt">PGS3_NEURO_SSGAC16=</span> PGS3_NEURO_SSGAC16,
+<span class="dt">PGS3_DPSYMP_SSGAC16=</span>    PGS3_DPSYMP_SSGAC16,
+<span class="dt">PGS3_CPD_TAG10=</span> PGS3_CPD_TAG10,
+<span class="dt">PGS3_CAD_CARDIOGR11=</span>    PGS3_CAD_CARDIOGR11,
+<span class="dt">PGS3_MI_CARDIOGR15=</span> PGS3_MI_CARDIOGR15,
+<span class="dt">PGS3_T2D_DIAGRAM12=</span> PGS3_T2D_DIAGRAM12,
+<span class="dt">PGS3_ADHD_PGC17=</span>    PGS3_ADHD_PGC17,
+<span class="dt">PGS3_AUTISM_PGC17=</span>  PGS3_AUTISM_PGC17,
+<span class="dt">PGS3_BIP_PGC11=</span> PGS3_BIP_PGC11,
+<span class="dt">PGS3_XDISORDERPGC13=</span>    PGS3_XDISORDERPGC13,
+<span class="dt">PGS3_MENARCHE_RPG14=</span>    PGS3_MENARCHE_RPG14,
+<span class="dt">PGS3_MENOPAUS_RPG15=</span>    PGS3_MENOPAUS_RPG15,
+<span class="dt">PGS3_CRTSL_CORNET14=</span>    PGS3_CRTSL_CORNET14,
+<span class="dt">PGS3_EXTRAV_GPC17=</span>  PGS3_EXTRAV_GPC17,
+<span class="dt">PGS3_AB_BROAD17=</span>    PGS3_AB_BROAD17,
+<span class="dt">PGS3_EDU3_SSGAC18=</span>  PGS3_EDU3_SSGAC18,
+<span class="dt">PGS3_OCD_IOCDF17=</span>   PGS3_OCD_IOCDF17,
+<span class="dt">PGS3_AFBC_SOCGEN16=</span> PGS3_AFBC_SOCGEN16,
+<span class="dt">PGS3_AFBF_SOCGEN16 =</span>    PGS3_AFBF_SOCGEN16,
+<span class="dt">PGS3_AFBM_SOCGEN16 =</span>    PGS3_AFBM_SOCGEN16,
+<span class="dt">PGS3_MDD2_PGC18=</span>    PGS3_MDD2_PGC18,
+<span class="dt">PGS3_PTSDAA_PGC18 =</span> PGS3_PTSDAA_PGC18,
+<span class="dt">PGS3_PTSDEA_PGC18 =</span> PGS3_PTSDEA_PGC18,
+<span class="dt">PGS3_PTSDC_PGC18 =</span>  PGS3_PTSDC_PGC18,
+<span class="dt">PGS3_ANXFS_ANGST16=</span> PGS3_ANXFS_ANGST16)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (p <span class="cf">in</span> pgs){
+  <span class="kw">assign</span>(<span class="kw">paste0</span>(p, <span class="dt">sep =</span><span class="st">&quot;&quot;</span>),<span class="kw">subset</span>(d_E, <span class="dt">select =</span> <span class="kw">c</span>(<span class="st">&quot;resilience&quot;</span>, <span class="st">&quot;PC1_5A&quot;</span>, <span class="st">&quot;PC1_5B&quot;</span>, <span class="st">&quot;PC1_5C&quot;</span>, <span class="st">&quot;PC1_5D&quot;</span>, <span class="st">&quot;PC1_5E&quot;</span>,p)))
+}
+pgs.list.E =<span class="st"> </span><span class="kw">list</span>(<span class="dt">PGS3_HEIGHT_GIANT14=</span>  PGS3_HEIGHT_GIANT14,
+<span class="dt">PGS3_WC_GIANT15=</span>    PGS3_WC_GIANT15,
+<span class="dt">PGS3_AD_IGAP13=</span> PGS3_AD_IGAP13,
+<span class="dt">PGS3_GENCOG_CHRG15 =</span>    PGS3_GENCOG_CHRG15,
+<span class="dt">PGS3_SCZ_PGC14 =</span>    PGS3_SCZ_PGC14,
+<span class="dt">PGS3_EVRSMK_TAG10=</span>  PGS3_EVRSMK_TAG10,
+<span class="dt">PGS3_WELLB_SSGAC16=</span> PGS3_WELLB_SSGAC16,
+<span class="dt">PGS3_NEURO_SSGAC16=</span> PGS3_NEURO_SSGAC16,
+<span class="dt">PGS3_DPSYMP_SSGAC16=</span>    PGS3_DPSYMP_SSGAC16,
+<span class="dt">PGS3_CPD_TAG10=</span> PGS3_CPD_TAG10,
+<span class="dt">PGS3_CAD_CARDIOGR11=</span>    PGS3_CAD_CARDIOGR11,
+<span class="dt">PGS3_MI_CARDIOGR15=</span> PGS3_MI_CARDIOGR15,
+<span class="dt">PGS3_T2D_DIAGRAM12=</span> PGS3_T2D_DIAGRAM12,
+<span class="dt">PGS3_ADHD_PGC17=</span>    PGS3_ADHD_PGC17,
+<span class="dt">PGS3_AUTISM_PGC17=</span>  PGS3_AUTISM_PGC17,
+<span class="dt">PGS3_BIP_PGC11=</span> PGS3_BIP_PGC11,
+<span class="dt">PGS3_XDISORDERPGC13=</span>    PGS3_XDISORDERPGC13,
+<span class="dt">PGS3_MENARCHE_RPG14=</span>    PGS3_MENARCHE_RPG14,
+<span class="dt">PGS3_MENOPAUS_RPG15=</span>    PGS3_MENOPAUS_RPG15,
+<span class="dt">PGS3_CRTSL_CORNET14=</span>    PGS3_CRTSL_CORNET14,
+<span class="dt">PGS3_EXTRAV_GPC17=</span>  PGS3_EXTRAV_GPC17,
+<span class="dt">PGS3_AB_BROAD17=</span>    PGS3_AB_BROAD17,
+<span class="dt">PGS3_EDU3_SSGAC18=</span>  PGS3_EDU3_SSGAC18,
+<span class="dt">PGS3_OCD_IOCDF17=</span>   PGS3_OCD_IOCDF17,
+<span class="dt">PGS3_AFBC_SOCGEN16=</span> PGS3_AFBC_SOCGEN16,
+<span class="dt">PGS3_AFBF_SOCGEN16 =</span>    PGS3_AFBF_SOCGEN16,
+<span class="dt">PGS3_AFBM_SOCGEN16 =</span>    PGS3_AFBM_SOCGEN16,
+<span class="dt">PGS3_MDD2_PGC18=</span>    PGS3_MDD2_PGC18,
+<span class="dt">PGS3_PTSDAA_PGC18 =</span> PGS3_PTSDAA_PGC18,
+<span class="dt">PGS3_PTSDEA_PGC18 =</span> PGS3_PTSDEA_PGC18,
+<span class="dt">PGS3_PTSDC_PGC18 =</span>  PGS3_PTSDC_PGC18,
+<span class="dt">PGS3_ANXFS_ANGST16=</span> PGS3_ANXFS_ANGST16)</code></pre></div>
+<p>Use lapply to perform regression on all the models set up in pgs.list</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model.AA =<span class="st"> </span><span class="kw">lapply</span>(pgs.list.AA, <span class="cf">function</span>(x)<span class="kw">lm</span>(resilience <span class="op">~</span><span class="st"> </span>x[[<span class="dv">7</span>]]<span class="op">+</span><span class="st"> </span>PC1_5A <span class="op">+</span><span class="st"> </span>PC1_5B <span class="op">+</span><span class="st"> </span>PC1_5C <span class="op">+</span><span class="st"> </span>PC1_5D <span class="op">+</span><span class="st"> </span>PC1_5E, <span class="dt">data =</span> x))
+model.E =<span class="st"> </span><span class="kw">lapply</span>(pgs.list.E, <span class="cf">function</span>(x)<span class="kw">lm</span>(resilience <span class="op">~</span><span class="st"> </span>x[[<span class="dv">7</span>]]<span class="op">+</span><span class="st"> </span>PC1_5A <span class="op">+</span><span class="st"> </span>PC1_5B <span class="op">+</span><span class="st"> </span>PC1_5C <span class="op">+</span><span class="st"> </span>PC1_5D <span class="op">+</span><span class="st"> </span>PC1_5E, <span class="dt">data =</span> x))</code></pre></div>
+
+</div>
+<!-- </div> -->
+<p style="text-align: center;">
+<a href="3-1-constructing-resilience-measure.html"><button class="btn btn-default">Previous</button></a>
+<a href="https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/master/02-Analyses.Rmd"><button class="btn btn-default">Edit</button></a>
+<a href="4-graphs.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>
